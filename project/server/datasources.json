@@ -1,0 +1,13 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "drinksDB": {
+     "name": "drinksDB",
+     "connector": "mongodb",
+     "host": "127.0.0.1",
+     "database": "devDB",
+     "port": 27017
+   }
+}
