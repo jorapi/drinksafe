@@ -22,7 +22,4 @@ creating new LoopBack models:
   ... follow the prompts
 
 
-
-Setting up mongoDB
-Nav to where mongodb .. bin
-  $ mongodb --dbpath  {local path to project}\project\data
+  
