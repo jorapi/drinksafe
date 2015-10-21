@@ -22,6 +22,6 @@ creating new LoopBack models:
   ... follow the prompts
 
 
-Configuring mongo DB 
- navigate to the mongo/bin   folder 
+Configuring mongo DB
+ navigate to the mongo/bin   folder
 	$ mongod --dpath C:\ { project path } \project\data
