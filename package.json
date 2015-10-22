@@ -6,6 +6,9 @@
     "pretest": "jshint .",
     "start": "nodemon ."
   },
+  "engines": {
+      "node": "0.12.x"
+  },
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
