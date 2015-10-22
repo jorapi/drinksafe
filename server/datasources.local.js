@@ -1,11 +1,11 @@
-var MONGODB_URL = process.env.MONGODB_URL || null;
+var mongoUri = process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/mydb';
 
-if (MONGODB_URL) {
-  module.exports = {
-    db: {
-      name: 'drinksDB',
-      connector: 'loopback-connector-mongodb',
-      url: MONGODB_URL
-    }
-  };
-}
+module.exports = {
+  mongodb: {
+    defaultForType: "mongodb",
+    connector: "loopback-connector-mongodb",
+    url: mongoUri
+  }
+};
