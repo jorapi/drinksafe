@@ -13,8 +13,8 @@
     },
     "id": {
       "type": "number",
-      "generated": true ,
-      "id": true 
+      "id": true,
+      "generated": true
     },
     "description": {
       "type": "string",

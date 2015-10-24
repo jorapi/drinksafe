@@ -39,5 +39,13 @@
   "ingredient": {
     "dataSource": "drinksDB",
     "public": true
+  },
+  "drink-safe": {
+    "dataSource": "drinksDB",
+    "public": true
+  },
+  "drinkSafe": {
+    "dataSource": "drinksDB",
+    "public": true
   }
 }

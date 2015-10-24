@@ -41,3 +41,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+node_modules/bower/node_modules/bower-config/node_modules/optimist/node_modules/wordwrap/test/wrap.js
+node_modules
+src/components
