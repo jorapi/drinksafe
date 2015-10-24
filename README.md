@@ -15,7 +15,7 @@ run
   $ npm install -g strongloop
 
 start project
-  $ npm start
+  $ slc run
 
 api explorer:
   http://localhost:3000/explorer/
