@@ -9,7 +9,7 @@ To build this:
     $ npm install nodemon -g
 
 run npm install:
-  $ npm install
+  $ npm install -g strongloop
 
 start project
   $ npm start
