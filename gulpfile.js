@@ -11,10 +11,10 @@ var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html');
 
 var paths = {
-    scripts: 'src/js/**/*.*',
-    styles: 'src/less/**/*.*',
+    scripts: 'src/widgets/**/*.*',
+    styles: 'src/widgets/**/*.*',
     images: 'src/img/**/*.*',
-    templates: 'src/templates/**/*.html',
+    templates: 'src/widgets/**/*.html',
     index: 'src/index.html',
     bower_fonts: 'src/components/**/*.{ttf,woff,eof,svg}',
 };
@@ -56,7 +56,7 @@ gulp.task('custom-images', function() {
 
 gulp.task('custom-js', function() {
     return gulp.src(paths.scripts)
-        .pipe(minifyJs())
+        /**.pipe(minifyJs())**/
         .pipe(concat('dashboard.min.js'))
         .pipe(gulp.dest('dist/js'));
 });
@@ -69,7 +69,7 @@ gulp.task('custom-less', function() {
 
 gulp.task('custom-templates', function() {
     return gulp.src(paths.templates)
-        .pipe(minifyHTML())
+        /**.pipe(minifyHTML())**/
         .pipe(gulp.dest('dist/templates'));
 });
 
