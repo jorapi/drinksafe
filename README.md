@@ -7,6 +7,8 @@ To build this:
 
   Install [nodemon](https://github.com/remy/nodemon) globally
     $ npm install nodemon -g
+    
+  Install [python] (<3.0) (https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi)
 
 run
   $ npm install -g strongloop
