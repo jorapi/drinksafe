@@ -8,7 +8,7 @@ To build this:
   Install [nodemon](https://github.com/remy/nodemon) globally
     $ npm install nodemon -g
 
-run npm install:
+run
   $ npm install -g strongloop
 
 start project
