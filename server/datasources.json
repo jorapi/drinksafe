@@ -4,8 +4,9 @@
     "connector": "memory"
   },
   "drinksDB": {
-   "defaultForType": "mongodb",
-   "connector": "loopback-connector-mongodb",
-   "url": "mongodb://heroku_pvjh7lll:o1bab7e2gjqljtsqvfmqb8utiq@ds029803.mongolab.com:29803/heroku_pvjh7lll"
+    "url": "mongodb://heroku_pvjh7lll:o1bab7e2gjqljtsqvfmqb8utiq@ds029803.mongolab.com:29803/heroku_pvjh7lll",
+    "name": "drinksDB",
+    "defaultForType": "mongodb",
+    "connector": "loopback-connector-mongodb"
   }
 }

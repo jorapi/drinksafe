@@ -13,8 +13,8 @@
     },
     "id": {
       "type": "number",
-      "generated": true ,
-      "id": true 
+      "id": true,
+      "generated": true
     },
     "description": {
       "type": "string",
@@ -29,10 +29,15 @@
     "isHot": {
       "type": "boolean"
     },
+    "userId": {
+      "type": "number",
+      "required": true
+    },
     "ingredients": {
       "type": [
-        "object"
-      ]
+        "ingredient"
+      ],
+      "required": true
     }
   },
   "validations": [],

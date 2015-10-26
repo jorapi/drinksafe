@@ -34,10 +34,20 @@
   },
   "drink": {
     "dataSource": "drinksDB",
-    "public": true
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   },
   "ingredient": {
     "dataSource": "drinksDB",
-    "public": true
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "comment": {
+    "dataSource": "drinksDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }
