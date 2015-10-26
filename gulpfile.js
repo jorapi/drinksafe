@@ -12,10 +12,10 @@ var gulp = require('gulp'),
 	nodemon = require('gulp-nodemon');
 
 var paths = {
-    scripts: 'src/js/**/*.*',
-    styles: 'src/less/**/*.*',
+    scripts: 'src/app/**/*.js',
+    styles: 'src/app/**/*.css',
     images: 'src/img/**/*.*',
-    templates: 'src/templates/**/*.html',
+    templates: 'src/app/**/*.html',
     index: 'src/index.html',
     bower_fonts: 'src/components/**/*.{ttf,woff,eof,svg}',
 };
