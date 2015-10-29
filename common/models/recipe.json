@@ -1,0 +1,45 @@
+{
+  "name": "recipe",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name":{
+      "type":"string"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "color": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+   "drink": {
+     "type": "belongsTo",
+     "model": "drink",
+     "foreignKey": "drinkId"
+   },
+   "ingredients": {
+     "type": "belongsTo",
+     "model": "ingredient",
+     "foreignKey": "ingredientId"
+   }
+  },
+  "acls": [],
+  "methods": {}
+}

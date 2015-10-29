@@ -13,7 +13,8 @@
     },
     "id": {
       "type": "number",
-      "required": true
+      "id": true,
+      "generated": true
     },
     "text": {
       "type": "string",
@@ -21,7 +22,14 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "drinks": {
+      "type": "hasMany",
+      "model": "drink",
+      "foreignKey": "ingredientId",
+      "through": "recipe"
+    }
+  },
   "acls": [],
   "methods": {}
 }
