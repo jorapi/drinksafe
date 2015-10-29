@@ -21,7 +21,12 @@
     },
     "id": {
       "type": "string",
-      "id": true
+      "id": true,
+      "generated": true
+    },
+    "userId": {
+      "type": "number",
+      "required": true
     },
     "color": {
       "type": "string"
@@ -32,12 +37,12 @@
    "drink": {
      "type": "belongsTo",
      "model": "drink",
-     "foreignKey": "drinkId"
+     "foreignKey": "id"
    },
-   "ingredients": {
+   "ingredient": {
      "type": "belongsTo",
      "model": "ingredient",
-     "foreignKey": "ingredientId"
+     "foreignKey": "id"
    }
   },
   "acls": [],

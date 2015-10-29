@@ -19,19 +19,6 @@
     "description": {
       "type": "string",
       "required": true
-    },
-    "color": {
-      "type": "string"
-    },
-    "rating": {
-      "type": "number"
-    },
-    "isHot": {
-      "type": "boolean"
-    },
-    "userId": {
-      "type": "number",
-      "required": true
     }
   },
   "validations": [],
@@ -39,7 +26,7 @@
     "ingredient": {
       "type": "hasMany",
       "model": "ingredient",
-      "foreignKey": "drinkId",
+      "foreignKey": "id",
       "through": "recipe"
     }
   },

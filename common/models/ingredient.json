@@ -26,7 +26,7 @@
     "drinks": {
       "type": "hasMany",
       "model": "drink",
-      "foreignKey": "ingredientId",
+      "foreignKey": "id",
       "through": "recipe"
     }
   },
