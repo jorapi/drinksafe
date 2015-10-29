@@ -32,16 +32,17 @@
     "userId": {
       "type": "number",
       "required": true
-    },
-    "ingredients": {
-      "type": [
-        "ingredient"
-      ],
-      "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "ingredient": {
+      "type": "hasMany",
+      "model": "ingredient",
+      "foreignKey": "drinkId",
+      "through": "recipe"
+    }
+  },
   "acls": [],
   "methods": {}
 }

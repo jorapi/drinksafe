@@ -34,3 +34,7 @@ creating new LoopBack models:
 Configuring mongo DB
  navigate to the mongo/bin   folder
 	$ mongod --dpath C:\ { project path } \project\data
+	
+	
+	
+(NodeJS old version if it doesn't work for some reason: https://nodejs.org/en/blog/release/v0.12.7/)
