@@ -12,11 +12,13 @@ To build this: (RUN ALL COMMAND PROMPTS AS ADMIN TO AVOID ERRORS)
   Install [python](https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi) (<3.0) 
 
 run
+
   $ npm install -g strongloop
   
   $ npm install -g gulp
 
-start project (run the following from the project directory)
+start project (run the following from the project directory):
+
   $ npm install
   
   $ npm start
