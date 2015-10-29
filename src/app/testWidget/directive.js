@@ -2,9 +2,7 @@
 
 
   angular.module('RDash')
-  .directive('testWidget', testWidget);
-
-  function testWidget(){
+  .directive('testWidget', function testWidget(){
     return{
       templateUrl: 'templates/testWidget/template.html',
       controller:'testWidgetController',
@@ -12,4 +10,4 @@
       restrict:'E',
       scope:{}
     };
-  };
+  });
