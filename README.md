@@ -13,10 +13,12 @@ To build this: (RUN ALL COMMAND PROMPTS AS ADMIN TO AVOID ERRORS)
 
 run
   $ npm install -g strongloop
+  
   $ npm install -g gulp
 
 start project (run the following from the project directory)
   $ npm install
+  
   $ npm start
 
 api explorer:
