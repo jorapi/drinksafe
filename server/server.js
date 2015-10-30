@@ -75,7 +75,9 @@ var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
  */
 app.get('/auth/account', ensureLoggedIn('/failure'), function (req, res, next) {
   //We're logged in! Yay!
+  res.redirect('/');
 });
 app.get('/auth/logout', function (req, res, next) {
-  //We've logged out! Boo!
+  //Log out. Boo!
+  res.redirect('/');
 });
