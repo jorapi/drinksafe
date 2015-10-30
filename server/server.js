@@ -18,6 +18,7 @@ try {
 // Initialize passport
 passportConfigurator.init();
 
+
 app.start = function() {
   // start the web server
   return app.listen(function() {
@@ -41,6 +42,20 @@ boot(app, __dirname, function(err) {
     app.start();
 });
 
+// The access token is only available after boot
+app.middleware('auth', loopback.token({
+  model: app.models.accessToken
+}));
+
+app.middleware('session:before', loopback.cookieParser(app.get('cookieSecret')));
+app.middleware('session', loopback.session({
+	secret: 'kitty',
+	saveUninitialized: true,
+	resave: true
+}));
+passportConfigurator.init();
+
+
 // Set up related models
 passportConfigurator.setupModels({
  userModel: app.models.user,
@@ -53,3 +68,14 @@ for(var s in config) {
  c.session = c.session !== false;
  passportConfigurator.configureProvider(s, c);
 }
+var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
+
+/*
+ *  This is where all the authentication takes place
+ */
+app.get('/auth/account', ensureLoggedIn('/failure'), function (req, res, next) {
+  //We're logged in! Yay!
+});
+app.get('/auth/logout', function (req, res, next) {
+  //We've logged out! Boo!
+});
