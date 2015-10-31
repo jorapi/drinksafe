@@ -1,0 +1,14 @@
+<div ng-if="userMenuIsLoggedIn == false">
+  <li class="link">
+    <a href="/auth/facebook">
+      Login
+    </a>
+  </li>
+</div>
+<div ng-if="userMenuIsLoggedIn == true">
+  <li class="link">
+    <a href="/auth/logout">
+      Logout
+    </a>
+  </li>
+</div>

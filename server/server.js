@@ -70,6 +70,7 @@ for(var s in config) {
 }
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
+
 /*
  *  This is where all the authentication takes place
  */
@@ -78,6 +79,10 @@ app.get('/auth/account', ensureLoggedIn('/failure'), function (req, res, next) {
   res.redirect('/');
 });
 app.get('/auth/logout', function (req, res, next) {
-  //Log out. Boo!
+  req.logout();
   res.redirect('/');
+});
+app.get('/auth/user', function (req, res, next) {
+  //We're logged in! Yay!
+  return res.json(req.user);
 });
