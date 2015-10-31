@@ -6,6 +6,10 @@
   </li>
 </div>
 <div ng-if="userMenuIsLoggedIn == true">
+  <li class="dropdown-header">
+    {{userMenuName}}
+  </li>
+  <li class="divider"></li>
   <li class="link">
     <a href="/auth/logout">
       Logout
