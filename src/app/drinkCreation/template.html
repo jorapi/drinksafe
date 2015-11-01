@@ -1,0 +1,117 @@
+<div class="container-fluid">
+  <form drinkCreation  name="drinkForm" >
+    <div class="row">
+      <div class="col-sm-12 col-md-4 col-lg-4 ">
+        <img alt="Drink Photo" src="img/red-solo-cup.jpg" style="max-width:320px"><br><br>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-8 col-lg-offset-0">
+        <div class="col-sm-12 col-md-12 col-lg-12 ">
+          <label for="dcName">Name:</label><br>
+          <input required name="name" class="col-sm-12 col-md-12 col-lg-12 form-control input-lg" id="dcName" ng-model="drink.name" type="text" minlength="3" maxlength="50"><br>
+          <span class="label label-success" ng-class="{'label-warning': drink.name.length >= 40, 'label-danger': drink.name.length >= 45 }">{{50- drink.name.length}} left</span><br><br>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <label for="dcDescription">Description:</label><br>
+          <textarea required name="desc" style="resize:none" class="col-sm-12 col-md-12 col-lg-12 form-control" id="dcDescription" rows="5" maxlength="1000" ng-model="drink.description" type="text"></textarea><br>
+          <span class="label label-success" ng-class="{'label-warning': drink.name.length >= 900, 'label-danger': drink.name.length >= 950 }">{{1000- drink.description.length}} left</span><br><br>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <a class="btn btn-info ">Upload Image</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6 panel panel-primary">
+        <br>
+        <div class="panel-heading col-sm-12 col-md-12 col-lg-12">
+          <label class="col-sm-5 col-md-5 col-lg-5" for="dcIngredients">Ingredients:</label>
+          <label class="col-sm-4 col-md-4 col-lg-4 " for="dcIngredients">Amount:</label>
+        </div><br><br>
+        <div class="col-sm-12 col-md-12 col-lg-12 panel-body" ng-hide="ingredients.length>0">
+          <h3 style="text-align:center">Search for ingrediants on the right to add them to your drinks recipe.</h3>
+        </div>
+      <ul class="panel-body" id="dcIngredients">
+        <li style="list-style-type: none;" class="" ng-repeat="ing in ingredients | orderBy:text">
+          <div class="ingName col-sm-4 col-md-4 col-lg-4">
+            {{ing.text}}
+          </div>
+        <!--  <div class="col-sm-4 col-md-4 col-lg-4">
+            {{ing.type}}
+          </div>-->
+          <div class="ingAmount col-sm-5 col-md-5 col-lg-5 btn-group">
+            <input required name="amount" class="form-control btn btn-default" style="max-width:60%" max="99" min="0" step=".01" ng-model="ing.amount" type="number">
+            <p class="btn btn-primary">
+              oz
+            </p>
+          </div>
+          <div class="ingRemove col-sm-2 col-md-2 col-lg-2">
+            <a class="btn btn-danger btn-sm" ng-click="remove(ing)">
+              <span class="glyphicon glyphicon-remove"></span>
+              Remove
+            </a>
+          </div><br><br>
+        </li>
+      </ul>
+    </div>
+      <div class="ingAdd col-sm-6 col-md-6 col-lg-5 col-lg-offset-1 panel panel-info">
+        <br>
+        <input class="form-control panel-heading" ng-model="search" placeholder="Search For Ingredients" type="search"><br>
+        <ul class="panel-body">
+          <li style="list-style-type: none;" class="" ng-repeat="ingre in dataIngredients | filter:search | orderBy:text | limitTo:10">
+            <div class=" col-sm-4 col-md-4 col-lg-5">
+              {{ingre.text}}
+            </div>
+            <div class="col-sm-5 col-md-5 col-lg-5">
+              {{ingre.type}}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+              <a class="btn btn-info" ng-click="addIng(ingre)">Add</a>
+            </div><br><br>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="ingDirections col-sm-12 col-md-12 col-lg-12">
+      <label class="col-sm-12 col-md-12 col-lg-12" for="dcDirections">Directions:</label><br>
+      <textarea minlength="3" class="form-control " style="resize:none;" id="dcDirections" ng-disabled="directions.length>=10" ng-enter="addStep()" ng-model="directionStep" maxlength="500" placeholder="Enter the steps to make your drink here one step at a time..." rows="5"></textarea>
+        <span class="label label-success" ng-class="{'label-warning': directionStep.length >= 400, 'label-danger': directionStep.length >= 450 }">{{500- directionStep.length}} left</span>
+    <!--  <br><a  class="btn btn-primary" ng-click="addStep()">Enter</a>-->
+    <br><br>
+    <div class="">
+    <div class=" col-sm-12 col-md-12 col-lg-12">
+      <label class="col-sm-1 col-md-1 col-lg-1" for="">Step:</label>
+      <label class="col-sm-4 col-md-4 col-lg-4 " for="">Instruction:</label>
+    </div><br><br>
+    <div class="col-sm-12 col-md-12 col-lg-12 panel-body" ng-hide="directions.length>0">
+      <h3 style="text-align:center">Enter the step's to make your recipe above one at a time. Your steps will then appear here in oreder</h3>
+    </div>
+      <ul  class="list-group col-sm-12 col-md-12 col-lg-12 row">
+        <li class="row list-group-item" style="list-style-type: none;" ng-repeat="dir in directions">
+          <div class="col-sm-1 col-md-1 col-lg-1" >
+            {{dir.step}}
+          </div>
+          <span class="col-sm-8 col-md-8 col-lg-8" style="word-wrap: break-word" ng-hide="editing">
+            {{dir.text}}
+          </span>
+          <div class="col-sm-10 col-md-10 col-lg-10" ng-show="editing">
+            <textarea name="step" class="form-control col-sm-5 col-md-5 col-lg-5" ng-enter="editing=false " style="resize:none" ng-model="dir.text" rows="5"></textarea>
+            <!--<button class="btn btn-success col-sm-2 col-md-2 col-lg-2" ng-click="editing=false">Save</button>-->
+          </div>
+          <div class="col-sm-1 col-md-1 col-lg-1">
+            <a class="btn btn-success" ng-show="editing" ng-click="editing=false">Save</a>
+          </div>
+          <div class="btn-group col-sm-3 col-md-3 col-lg-3" >
+            <a class="btn btn-warning" ng-disabled="disableEdit" ng-hide="editing" ng-click="editing=true">Edit</a>
+            <a class="btn btn-danger" ng-disabled="disableEdit" ng-hide="editing" ng-click="removeStep(dir)">Delete</a>
+          </div>
+          <br>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <br><br>
+    <button class="btn btn-primary" ng-disabled="ingredients.length<=0 || directions.length<=0" ng-click="submit()">Submit</button>
+  </form>
+  <br><br><br>
+
+</div>
