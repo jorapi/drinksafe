@@ -1,8 +1,12 @@
 angular.module('RDash')
 .controller('drinkCreationController', function($scope, $http){
   $scope.drink={
-    "name":"",
-    "description":""
+    "name": "",
+    "rating": 0,
+    "instructions": "",
+    "description":"",
+    "userId":0,
+    "color":""
   };
   $scope.recipe={
     "name": "",
@@ -22,7 +26,8 @@ angular.module('RDash')
 
 
   $scope.submit = function(){
-    /*$http.put("/api/Drinks", $scope.drink)*/
+    $scope.drink.instructions=$scope.directions;
+    $http.put("/api/drinks", $scope.drink);
   };
 
   $scope.remove=function(item){

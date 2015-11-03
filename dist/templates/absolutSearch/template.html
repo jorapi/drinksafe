@@ -4,7 +4,7 @@
   <br>
   <input class="form-control panel-heading" ng-model="search" placeholder="drinks search" type="search"><br>
   <ul class="panel-body">
-    <li style="list-style-type: none;" class="" ng-repeat="drink in Drinks | filter:search | orderBy:text | limitTo:10">
+    <li style="list-style-type: none;" class="" ng-repeat="drink in drinks | filter:search | orderBy:text | limitTo:10">
       <div class=" col-sm-4 col-md-4 col-lg-5">
         {{drink.name}}
       </div>
