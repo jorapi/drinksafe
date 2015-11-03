@@ -1,6 +1,6 @@
 {
   "name": "drink",
-  "plural": "Drinks",
+  "plural": "drinks",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -17,17 +17,33 @@
       "generated": true
     },
     "description": {
-      "type": "string",
+      "type": "string"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "instructions": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "number",
       "required": true
+    },
+    "color": {
+      "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "ingredient": {
-      "type": "hasMany",
+    "ingredients": {
+      "type": "hasAndBelongsToMany",
       "model": "ingredient",
-      "foreignKey": "id",
-      "through": "recipe"
+      "foreignKey": ""
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": ""
     }
   },
   "acls": [],

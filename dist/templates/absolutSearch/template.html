@@ -1,0 +1,19 @@
+
+
+<div class="ingAdd col-sm-6 col-md-6 col-lg-5 col-lg-offset-1 panel panel-info">
+  <br>
+  <input class="form-control panel-heading" ng-model="search" placeholder="drinks search" type="search"><br>
+  <ul class="panel-body">
+    <li style="list-style-type: none;" class="" ng-repeat="drink in Drinks | filter:search | orderBy:text | limitTo:10">
+      <div class=" col-sm-4 col-md-4 col-lg-5">
+        {{drink.name}}
+      </div>
+      <!-- <div class="col-sm-5 col-md-5 col-lg-5">
+        {{drink.descriptionPlain}}
+      </div> -->
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <a class="btn btn-info" ng-click="addIng(ingre)">Add</a>
+      </div><br><br>
+    </li>
+  </ul>
+</div>

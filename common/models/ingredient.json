@@ -24,10 +24,9 @@
   "validations": [],
   "relations": {
     "drinks": {
-      "type": "hasMany",
+      "type": "hasAndBelongsToMany",
       "model": "drink",
-      "foreignKey": "id",
-      "through": "recipe"
+      "foreignKey": ""
     }
   },
   "acls": [],

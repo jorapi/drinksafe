@@ -19,6 +19,16 @@
       "type": "hasMany",
       "model": "userCredential",
       "foreignKey": "userId"
+    },
+    "customDrinks": {
+      "type": "hasMany",
+      "model": "drink",
+      "foreignKey": ""
+    },
+    "drinks": {
+      "type": "hasMany",
+      "model": "drink",
+      "foreignKey": ""
     }
   },
   "acls": [],

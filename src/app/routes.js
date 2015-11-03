@@ -22,6 +22,11 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('drinkCreation', {
                 url: '/drinkCreation',
                 templateUrl: 'templates/drinkCreation.html'
+            })
+            .state('absolutSearch', {
+                url: '/absolutSearch',
+                templateUrl: 'templates/absolutSearch.html'
             });
+
     }
 ]);

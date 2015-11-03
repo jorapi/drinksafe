@@ -59,9 +59,5 @@
     "public": true,
     "$promise": {},
     "$resolved": true
-  },
-  "recipe": {
-    "dataSource": "db",
-    "public": true
   }
 }
