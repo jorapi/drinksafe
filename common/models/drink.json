@@ -29,13 +29,8 @@
     "color": {
       "type": "string"
     },
-    "photoId":{
-      "type":"number"
-    },
-    "instructions": {
-      "type": [
-        "string"
-      ]
+    "photoId": {
+      "type": "number"
     }
   },
   "validations": [],
@@ -52,6 +47,5 @@
     }
   },
   "acls": [],
-  "methods": {
-  }
+  "methods": {  }
 }
