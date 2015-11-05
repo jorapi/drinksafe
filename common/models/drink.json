@@ -29,6 +29,9 @@
     "color": {
       "type": "string"
     },
+    "photoId":{
+      "type":"number"
+    },
     "instructions": {
       "type": [
         "string"
@@ -49,5 +52,7 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "add": "add"
+  }
 }
