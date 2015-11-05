@@ -10,6 +10,7 @@
     "node": "0.12.x"
   },
   "dependencies": {
+    "cloudinary": "",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "loopback": "^2.22.0",
