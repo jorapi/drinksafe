@@ -29,11 +29,6 @@
       "type": "hasMany",
       "model": "drink",
       "foreignKey": ""
-    },
-    "ingredients": {
-      "type": "hasMany",
-      "model": "ingredient",
-      "foreignKey": ""
     }
   },
   "acls": [],

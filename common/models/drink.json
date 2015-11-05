@@ -22,17 +22,15 @@
     "rating": {
       "type": "number"
     },
+    "instructions": {
+      "type": "string"
+    },
     "userId": {
       "type": "number",
       "required": true
     },
     "color": {
       "type": "string"
-    },
-    "instructions": {
-      "type": [
-        "string"
-      ]
     }
   },
   "validations": [],
