@@ -2,12 +2,10 @@
 
 
   angular.module('RDash')
-  .directive('testWidget', function testWidget(){
+  .directive('passObject', function testWidget(){
     return{
-      templateUrl: 'templates/testWidget/template.html',
-      controller:'testWidgetController',
-      controllerAs:'testCtrl',
-      restrict:'E',
-      scope:{}
+      restrict: 'E',
+          scope: { obj: '=' },
+          template: '<div>Hello, {{obj.prop}}!</div>'
     };
   });
