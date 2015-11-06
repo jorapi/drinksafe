@@ -5,6 +5,7 @@ angular.module('RDash')
     .success(function(data){
       $scope.drinks = data;
     });
+    $scope.filter="name";
     $scope.test="afasdf";
     //$scope.holdID = $;
 

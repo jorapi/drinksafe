@@ -1,22 +1,44 @@
-<div  class="row">
-  <div class="ingAdd col-sm-12 col-md-12 col-lg-12 panel panel-info">
+<div class="row">
+  <div class="ingAdd col-sm-12 col-md-12 col-lg-12 panel panel-info row">
     <br>
-    <input class="form-control panel-heading" ng-model="search" placeholder="drinks search" type="search"><br>
+    <div class="col-sm-12 col-md-12 col-lg-12 input-group">
+
+<input class="form-control panel-heading " ng-model="search" placeholder="drinks search" type="search">
+
+      <div class="dropdown input-group-btn">
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button">
+          Order By
+          <span class="caret"></span>
+        </button>
+        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
+          <li>
+            <a ng-click="filter='name'">Name</a>
+          </li>
+          <li>
+            <a ng-click="filter='-rating'">Highest Rating</a>
+          </li>
+          <li>
+            <a ng-click="filter='rating'">Lowest Rating</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <br><br><br>
     <ul class="panel-body list-group">
-      <li style="list-style-type: none;" class="list-group-item  row" ng-repeat="drink in drinks | filter:search | orderBy:text | limitTo:10">
-        <div ng-hide="expand" class=" col-sm-12 col-md-12 col-lg-12">
-        <h4>{{drink.name}}</h4>
+      <li class="list-group-item  row" ng-repeat="drink in drinks | filter:search | orderBy:filter | limitTo:10" style="list-style-type: none;">
+        <div class=" col-sm-12 col-md-12 col-lg-12" ng-hide="expand">
+          <h4>{{drink.name}}</h4>
         </div>
-        <div ng-hide="expand" class=" col-sm-12 col-md-12 col-lg-12">
+        <div class=" col-sm-12 col-md-12 col-lg-12" ng-hide="expand">
           <p>
             {{drink.description}}
           </p>
         </div>
-        <div id="anchor{{drink.id}}"class=" col-sm-12 col-md-12 col-lg-12" ng-show="expand">
-          <drink-display  drink='drink.id'></drink-display>
+        <div class=" col-sm-12 col-md-12 col-lg-12" id="anchor{{drink.id}}" ng-show="expand">
+          <drink-display drink='drink.id'></drink-display>
         </div>
         <div class=" col-sm-12 col-md-12 col-lg-12">
-          <a  ng-class="{'fa-angle-double-down':!expand, 'fa-angle-double-up':expand}" class="btn btn-info fa fa-angle-double-down col-sm-2 col-md-2 col-lg-2 col-lg-offset-5 col-md-offset-5 col-sm-offset-5"  ng-click="expand=!expand; gotoAnchor(drink.id)"></a>
+          <a class="btn btn-info fa fa-angle-double-down col-sm-2 col-md-2 col-lg-2 col-lg-offset-5 col-md-offset-5 col-sm-offset-5" ng-class="{'fa-angle-double-down':!expand, 'fa-angle-double-up':expand}" ng-click="expand=!expand; gotoAnchor(drink.id)"></a>
         </div>
       </li>
     </ul>
