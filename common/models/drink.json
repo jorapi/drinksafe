@@ -31,11 +31,6 @@
     },
     "photoId": {
       "type": "number"
-    },
-    "ingredients": {
-      "type": [
-        "string"
-      ]
     }
   },
   "validations": [],
@@ -52,5 +47,5 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {  }
 }
