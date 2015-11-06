@@ -8,5 +8,10 @@
     "name": "drinksDB",
     "defaultForType": "mongodb",
     "connector": "loopback-connector-mongodb"
+  },
+  "cloudinary": {
+    "name": "cloudinary",
+    "connector": "loopback-component-cloudinary",
+    "url": "https://api.cloudinary.com/v1_1/hiqbii68e"
   }
 }

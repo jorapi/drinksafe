@@ -59,5 +59,9 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "CloudinaryImage": {
+    "dataSource": "cloudinary",
+    "public": true
   }
 }
