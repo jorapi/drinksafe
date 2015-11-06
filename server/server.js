@@ -1,10 +1,22 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 var app = module.exports = loopback();
+var path = require('path');
 
 // Create an instance of PassportConfigurator with the app instance
 var PassportConfigurator = require('loopback-component-passport').PassportConfigurator;
 var passportConfigurator = new PassportConfigurator(app);
+
+// cloudify setup for file upload
+var cloudinary = require('cloudinary');
+var fs = require('fs');
+var util = require('util');
+
+cloudinary.config({
+  cloud_name: 'hiqbii68e',
+  api_key: '887336151291393',
+  api_secret: 'YeQ1OQVp02z-pzoOZvm8VTNXy7E'
+});
 
 // Load the provider configurations
 var config = {};
@@ -17,7 +29,6 @@ try {
 }
 // Initialize passport
 passportConfigurator.init();
-
 
 app.start = function() {
   // start the web server

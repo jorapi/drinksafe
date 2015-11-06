@@ -1,5 +1,6 @@
 angular.module('RDash')
 .controller('drinkCreationController', function($scope, $http){
+  $scope.currentImage = "img/red-solo-cup.jpg";
   $scope.drink={
     "name": "",
     "rating": 0,
@@ -16,6 +17,10 @@ angular.module('RDash')
     "userId":0,
     "color":""
   };
+  $scope.image={
+    "file": "",
+    "id": ""
+  }
   $scope.directionStep;
   $scope.directions=[];
   $scope.ingredients=[];
@@ -61,5 +66,9 @@ angular.module('RDash')
     for(i=index;i<$scope.directions.length;++i){
       $scope.directions[i].step--;
     }
+  };
+
+  $scope.onSuccess=function(response){
+    $scope.currentImage = response.data.result.url;
   };
 });

@@ -20,29 +20,29 @@
       <ul class="sidebar">
         <li class="sidebar-main">
           <a ng-click="toggleSidebar()">
-            DrinkSafe
+            <img src="/img/drinksafe.svg" style="display: inline-block;width: 150px;"/>
             <span class="menu-icon glyphicon glyphicon-transfer"></span>
           </a>
         </li>
         <li class="sidebar-title"><span>NAVIGATION</span></li>
         <li class="sidebar-list">
-          <a href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+          <a href="#" onclick="document.getElementById('header-display').innerHTML = 'Home / Dashboard';">
+            Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
         </li>
         <li class="sidebar-list">
-          <a href="#/tables">Tables <span class="menu-icon fa fa-table"></span></a>
+          <a href="#/drinkCreation" onclick="document.getElementById('header-display').innerHTML = 'Create';">
+            Recipe Creation <span class="menu-icon fa fa-pencil"></span></a>
         </li>
-        <li class="sidebar-list">
-          <a href="#/drinkCreation">Recipe Creation <span class="menu-icon fa fa-pencil"></span></a>
-        </li>
-        <li class="sidebar-list">
+        <!--<li class="sidebar-list">
           <a href="#/absolutSearch">Absolut Search<span class="menu-icon fa fa-pencil"></span></a>
-        </li>
+        </li>-->
         <li class="sidebar-list">
-          <a href="#/drinkSearch">Drink Search<span class="menu-icon fa fa-pencil"></span></a>
+          <a href="#/drinkSearch" onclick="document.getElementById('header-display').innerHTML = 'Search';">
+            Drink Search<span class="menu-icon fa fa-list"></span></a>
         </li>
       </ul>
       <div class="sidebar-footer">
-        <div class="col-xs-4">
+        <!--<div class="col-xs-4">
           <a href="https://github.com/rdash/rdash-angular" target="_blank">
             Github
           </a>
@@ -56,7 +56,7 @@
           <a href="#">
             Support
           </a>
-        </div>
+        </div>-->
       </div>
     </div>
     <!-- End Sidebar -->
@@ -86,7 +86,7 @@
                   </li>
                   <li class="divider"></li>
                   <li>
-                    <a href="#">Server Down!</a>
+                    <a href="#">Low on Vodka!!!</a>
                   </li>
                 </ul>
               </div>
@@ -95,8 +95,8 @@
               <div class="page">
                 DrinkSafe
               </div>
-              <div class="breadcrumb-links">
-                Home / Dashboard
+              <div class="breadcrumb-links" id="header-display">
+                
               </div>
             </div>
           </div>
