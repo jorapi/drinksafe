@@ -6,4 +6,8 @@ angular.module('RDash')
       .success(function(response){
         $scope.dataDrink=response;
       });
+      $http.get("/api/drinks/"+$scope.drink+"/ingredients")
+        .success(function(response){
+          $scope.dataIngredient=response;
+        });
   });

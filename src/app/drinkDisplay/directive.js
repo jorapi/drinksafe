@@ -6,7 +6,8 @@ angular.module('RDash')
     controllerAs:'drinkDisplayCtrl',
     restrict:'E',
     scope:{
-      drink:'='
+      drink:'=',
+      topDisplay:'='
     }
   };
 });

@@ -1,12 +1,12 @@
 angular.module('RDash')
-.controller('drinkSearchController', function($scope, $http, $anchorScroll, $location){
+  .controller('drinkSearchController', function($scope, $http, $anchorScroll, $location) {
 
-  $http.get("api/drinks")
-    .success(function(data){
-      $scope.drinks = data;
-    });
-    $scope.filter="name";
-    $scope.test="afasdf";
+    $http.get("api/drinks")
+      .success(function(data) {
+        $scope.drinks = data;
+      });
+    $scope.filter = "name";
+    $scope.test = "afasdf";
     //$scope.holdID = $;
 
 
@@ -22,4 +22,4 @@ angular.module('RDash')
         $anchorScroll();
       }
     };
-});
+  });

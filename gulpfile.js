@@ -64,7 +64,8 @@ gulp.task('custom-js', function() {
 
 gulp.task('custom-less', function() {
     return gulp.src(paths.styles)
-        .pipe(less())
+        /**.pipe(less())**/
+        .pipe(concat('maincss.css'))
         .pipe(gulp.dest('dist/css'));
 });
 
