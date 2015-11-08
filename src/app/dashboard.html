@@ -5,33 +5,43 @@
 </div>
 
 
-<div class="row">
-	<div class="col-lg-6">
-		<rd-widget>
-      		<rd-widget-header icon="fa-tasks" title="Servers">
-				<a href="#">Manage</a>
-      		</rd-widget-header>
-      		<rd-widget-body classes="medium no-padding">
-				<div class="table-responsive">
-					<table class="table">
-						<tbody>
-							<tr><td>RuiojgioiyoiuhiuiugguiygiuDVMPC001</td><td>238.103.133.37</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDVMPC002</td><td>68.66.63.170</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDVMPC003</td><td>76.117.212.33</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-							<tr><td>RDPHPC001</td><td>91.88.224.5</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDESX001</td><td>197.188.15.93</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDESX002</td><td>168.85.154.251</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDESX003</td><td>209.25.191.61</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-							<tr><td>RDESX004</td><td>252.37.192.235</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDTerminal01</td><td>139.71.18.207</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-							<tr><td>RDTerminal02</td><td>136.80.122.212</td><td><span tooltip="Could not connect!" class="text-warning"><i class="fa fa-flash"></i></span></td></tr>
-							<tr><td>RDDomainCont01</td><td>196.80.245.33</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-						</tbody>
-					</table>
-				</div>
-			</rd-widget-body>
-		</rd-widget>
-	</div>
+<head>
+    <title>bs</title>
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "src/components/bootstrap/dist/css/bootstrap.min.css" rel = "stylesheet">
+    <link href = "css/styles.css" rel = "stylesheet">
+</head>
+<body>
+    <div id = "myCarousel" class = "carousel slide">
+
+      <ol class = "carousel-indicators">
+        <li data-target = "#myCarousel" data-slide-to = "0" class = "active"></li>
+        <li data-target = "#myCarousel" data-slide-to = "1"></li>
+        <li data-target = "#myCarousel" data-slide-to = "2"></li>
+      </ol>
+       <div class = "carousel-inner">
+          <div class = "item active">
+            <img src = "img/one.jpg" alt = "One" class="img-responsive">
+          </div>
+          <div class = "item">
+            <img src = "img/two.jpg" alt = "One" class="img-responsive">
+          </div>
+          <div class = "item">
+            <img src = "img/three.jpg" alt = "One" class="img-responsive">
+          </div>
+       </div>
+       <a class = "carousel-control left" href = "#myCarousel" data-slide = "prev">
+        <span class = "icon-prev"></span>
+      </a>
+      <a class = "carousel-control right" href = "#myCarousel" data-slide = "next">
+       <span class = "icon-next"></span>
+     </a>
+
+
+   </div>
+  <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src = "components/bootstrap/js/bootstrap.js"></script>
+</body>
 	<div class="col-lg-6">
 		<rd-widget>
 			<rd-widget-header icon="fa-users" title="Users">
