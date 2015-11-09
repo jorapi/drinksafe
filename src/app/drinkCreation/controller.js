@@ -36,6 +36,7 @@ angular.module('RDash')
       for (i = 0; i < $scope.directions.length; ++i) {
         holdDirections.push($scope.directions[i].text);
       }
+      $scope.drink.photo=$scope.currentImage;
       $scope.drink.instructions = holdDirections;
       $http.put("/api/drinks", $scope.drink)
         .success(function(response) {

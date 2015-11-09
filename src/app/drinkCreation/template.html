@@ -1,5 +1,5 @@
 <div class="container-fluid" ng-hide="drinkPost">
-  <form drinkCreation name="drinkForm">
+  <form drinkCreation name="drinkForm" ng-submit="submit()">
     <div class="row">
       <div class="col-sm-12 col-md-4 col-lg-4 ">
         <img alt="Drink Photo" src="{{currentImage}}" style="max-width:320px"><br><br>
@@ -13,8 +13,8 @@
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12">
           <label for="dcDescription">Description:</label><br>
-          <textarea class="col-sm-12 col-md-12 col-lg-12 form-control" id="dcDescription" maxlength="1000" name="desc" ng-model="drink.description" required rows="5" style="resize:none" type="text"></textarea><br>
-          <span class="label label-success" ng-class="{'label-warning': drink.name.length >= 900, 'label-danger': drink.name.length >= 950 }">{{1000- drink.description.length}}
+          <textarea class="col-sm-12 col-md-12 col-lg-12 form-control" id="dcDescription" maxlength="500" name="desc" ng-model="drink.description" required rows="5" style="resize:none" type="text"></textarea><br>
+          <span class="label label-success" ng-class="{'label-warning': drink.description.length >= 400, 'label-danger': drink.description.length >= 450 }">{{500- drink.description.length}}
             left</span><br><br>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12">
@@ -41,9 +41,6 @@
             <div class="ingName col-sm-4 col-md-4 col-lg-4">
               {{ing.text}}
             </div>
-            <!--  <div class="col-sm-4 col-md-4 col-lg-4">
-            {{ing.type}}
-          </div>-->
             <div class="ingAmount col-sm-5 col-md-5 col-lg-5 btn-group">
               <input class="form-control btn btn-default" max="99" min="0" name="amount" ng-model="ing.amount" required step=".01" style="max-width:60%" type="number">
               <p class="btn btn-primary">
@@ -117,7 +114,7 @@
       </div>
     </div>
     <br><br>
-    <button class="btn btn-primary" ng-click="submit()" ng-disabled="ingredients.length<=0 || directions.length<=0">Submit</button>
+    <button type="submit" class="btn btn-primary" ng-click="" ng-disabled="ingredients.length<=0 || directions.length<=0">Submit</button>
   </form>
   <br><br><br>
 

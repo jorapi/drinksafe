@@ -30,6 +30,11 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('drinkSearch', {
                 url: '/drinkSearch',
                 templateUrl: 'templates/drinkSearch.html'
+            })
+            .state('drinkView', {
+                url: '/drinkView/:drinkId',
+                templateUrl: 'templates/drinkView.html'
+
             });
 
     }

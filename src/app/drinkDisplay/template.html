@@ -1,4 +1,4 @@
-<div>
+<div class="drinkDisplay">
 
   <div class="row top" ng-show="topDisplay">
     <div class="col-sm-4 col-md-4 col-lg-4 ">
@@ -17,8 +17,21 @@
   </div>
 
   <div>
+    <ul  ng-show="topDisplay" class=" col-sm-12 col-md-12 col-lg-12 row">
+      <li class="row  col-sm-6 col-md-6 col-lg-6 lineLeft" style="list-style-type: none;" ng-repeat="ing in dataIngredient">
+        <span class="col-sm-6 col-md-6 col-lg-6" style="word-wrap: break-word">
+          {{ing.text}}
+        </span>
+        <span class="col-sm-6 col-md-6 col-lg-6" style="word-wrap: break-word">
+          {{ing.type}}
+        </span>
+        <br>
+      </li>
+    </ul>
+
+
     <ul  class="list-group col-sm-12 col-md-12 col-lg-12 row">
-      <li class="row list-group-item" style="list-style-type: none;" ng-repeat="ins in dataDrink.instructions">
+      <li class="row list-group-item" style="list-style-type: none;" ng-repeat="ins in dataDrink.instructions track by $index">
         <div class="col-sm-1 col-md-1 col-lg-1" >
           {{dataDrink.instructions.indexOf(ins)+1}}
         </div>
@@ -29,17 +42,7 @@
       </li>
     </ul>
 
-    <ul  class="list-group col-sm-12 col-md-12 col-lg-12 row">
-      <li class="row list-group-item" style="list-style-type: none;" ng-repeat="ing in dataIngredient">
-        <span class="col-sm-8 col-md-8 col-lg-8" style="word-wrap: break-word">
-          {{ing.text}}
-        </span>
-        <span class="col-sm-8 col-md-8 col-lg-8" style="word-wrap: break-word">
-          {{ing.type}}
-        </span>
-        <br>
-      </li>
-    </ul>
+
     <!--<ul  class="list-group col-sm-12 col-md-12 col-lg-12 row">
       <li class="row list-group-item" style="list-style-type: none;" ng-repeat="dir in dataDrink.instructions">
         <div class="col-sm-1 col-md-1 col-lg-1" >
