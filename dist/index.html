@@ -91,7 +91,17 @@
                   </li>
                 </ul>
               </div>
-            </div>
+              <div class="item search">
+                <a href="#" class="dropdown-toggle">
+                 </a>
+                <input ng-model="filter.text" type="search" placeholder="Search for drink"/>
+                  <ul class="list-drinks">
+                    <li class="list-group-item"
+                        ng-repeat="drinks in drinkList()">
+                        {{drinks}}
+                      </li>
+                    <ul>
+              </div>
             <div class="meta">
               <div class="page">
                 DrinkSafe
