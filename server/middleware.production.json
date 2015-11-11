@@ -2,7 +2,7 @@
   "final:after": {
     "loopback#errorHandler": {
       "params": {
-        "includeStack": false
+        "includeStack": true
       }
     }
   }

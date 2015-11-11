@@ -2,6 +2,7 @@
   "name": "drink",
   "plural": "drinks",
   "base": "PersistedModel",
+  "strict": true,
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -9,15 +10,10 @@
   "properties": {
     "name": {
       "type": "string",
-      "required": true
-    },
-    "id": {
-      "type": "number",
-      "id": true,
-      "generated": true
-    },
-    "description": {
-      "type": "string"
+      "required": true,
+      "index": {
+        "unique": true
+      }
     },
     "rating": {
       "type": "number"
@@ -32,10 +28,23 @@
     "photoId": {
       "type": "number"
     },
-    "ingredients": {
+    "instructions": {
       "type": [
         "string"
       ]
+    },
+    "photo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true,
+      "index": true
     }
   },
   "validations": [],
