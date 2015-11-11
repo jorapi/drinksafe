@@ -16,7 +16,9 @@
   },
   "user": {
     "dataSource": "db",
-    "public": true
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   },
   "accessToken": {
     "dataSource": "db",

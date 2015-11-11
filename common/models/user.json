@@ -2,6 +2,11 @@
   "name": "user",
   "plural": "users",
   "base": "User",
+  "strict": true,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
   "properties": {},
   "validations": [],
   "relations": {

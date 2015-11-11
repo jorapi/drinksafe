@@ -2,6 +2,7 @@
   "name": "ingredient",
   "plural": "ingredients",
   "base": "PersistedModel",
+  "strict": true,
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -14,11 +15,13 @@
     "id": {
       "type": "number",
       "id": true,
-      "generated": true
+      "generated": true,
+      "index": true
     },
     "text": {
       "type": "string",
-      "required": true
+      "required": true,
+      "index": true
     }
   },
   "validations": [],
