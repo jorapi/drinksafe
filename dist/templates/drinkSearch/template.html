@@ -1,0 +1,75 @@
+
+<div class="row drinkSearch">
+  <div class="ingAdd col-sm-12 col-md-12 col-lg-12 panel panel-info row">
+    <br>
+    <div class="col-sm-12 col-md-12 col-lg-12 input-group panel-info">
+
+      <input ng-click="limit=10;unexpand();" class="form-control panel-heading " ng-model="search" placeholder="drinks search" type="search">
+
+      <div class="dropdown input-group-btn">
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-info dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button">
+          Order By
+          <span class="caret"></span>
+        </button>
+        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
+          <li>
+            <a ng-click="filter='name'">Name</a>
+          </li>
+          <li>
+            <a ng-click="filter='-rating'">Highest Rating</a>
+          </li>
+          <li>
+            <a ng-click="filter='rating'">Lowest Rating</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <br>
+    <ul class="panel-body list-group searchList">
+      <li class="list-group-item  row searchListItem" ng-repeat="drink in drinks | filter:search | orderBy:filter | limitTo:limit" style="list-style-type: none;">
+        <div class="searchImg " id="" ng-class="{'col-sm-2 col-md-2 col-lg-2': !drink.expand, 'col-sm-4 col-md-4 col-lg-4': drink.expand }">
+          <img ng-dblclick="$location.path('/drinkView').search({drinkId: drink.id});" ng-click="unexpand(); drink.expand=!drink.drink.expand" alt="Image not found" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" class="img-responsive" id="drinkImg" src="{{drink.photo}}" style="max-width:100%; max-hight:200px"><br><br>
+        </div>
+        <div class="searchText row" ng-class="{'col-sm-10 col-md-10 col-lg-10': !drink.expand, 'col-sm-8 col-md-8 col-lg-8 textxpand': drink.expand }">
+
+          <div class=" col-sm-12 col-md-12 col-lg-12 ">
+            <p  ng-click="unexpand(); drink.expand=!drink.expand" class="textName" rows="1">
+              {{drink.name}}
+            </p>
+          </div>
+          <div class=" col-sm-12 col-md-12 col-lg-12 ">
+            <p class="textDes" rows="5">
+              {{drink.description}}
+            </p>
+          </div>
+        </div>
+        <div class="displayContainer">
+          <div class=" col-sm-12 col-md-12 col-lg-12 dispalyDrink check-element " ng-show="drink.expand" style="">
+
+            <ul  class="list-group col-sm-12 col-md-12 col-lg-12 row">
+              <p class="list-group-item active">
+                Instructions:
+              </p>
+              <li class="row list-group-item" style="list-style-type: none;" ng-repeat="ins in drink.instructions track by $index">
+                <div class="col-sm-1 col-md-1 col-lg-1" >
+                  {{drink.instructions.indexOf(ins)+1}}
+                </div>
+                <span class="col-sm-11 col-md-11 col-lg-11" style="word-wrap: break-word">
+                  {{ins}}
+                </span>
+                <br>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <!--<div class=" col-sm-12 col-md-12 col-lg-12">
+          <a class="btn btn-info fa fa-angle-double-down col-sm-2 col-md-2 col-lg-2 col-lg-offset-5 col-md-offset-5 col-sm-offset-5" ng-class="{'fa-angle-double-down':!drink.expand, 'fa-angle-double-up':drink.expand}" ng-click="unexpand(); drink.expand=!drink.expand"></a>
+        </div>-->
+      </li>
+    </ul>
+    <div class=" col-sm-12 col-md-12 col-lg-12">
+      <a  class="btn btn-info fa fa-angle-double-down col-sm-2 col-md-2 col-lg-2 col-lg-offset-5 col-md-offset-5 col-sm-offset-5" ng-hide="limit>=(drinks | filter:search).length" ng-click="limit=limit+10"></a>
+    </div>
+  </div>
+</div>

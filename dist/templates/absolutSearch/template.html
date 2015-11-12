@@ -1,0 +1,46 @@
+
+<div class="row">
+  <div class="ingAdd col-sm-6 col-md-6 col-lg-5 col-lg-offset-1 panel panel-info">
+    <br>
+    <input class="form-control panel-heading" ng-model="search" placeholder="drinks search" type="search"><br>
+    <ul class="panel-body">
+      <li style="list-style-type: none;" class="" ng-repeat="drink in drinks | filter:search | orderBy:text | limitTo:10">
+        <div class=" col-sm-4 col-md-4 col-lg-5">
+          {{drink.name}}
+        </div>
+        <!-- <div class="col-sm-5 col-md-5 col-lg-5">
+          {{drink.descriptionPlain}}
+        </div> -->
+        <div class="col-sm-2 col-md-2 col-lg-2">
+          <a class="btn btn-info" ng-click="addDrink(drink)">Add</a>
+        </div><br><br>
+      </li>
+    </ul>
+  </div>
+    <div class="col-sm-6 col-md-6 col-lg-6 panel panel-primary">
+      <br>
+      <div class="panel-heading col-sm-12 col-md-12 col-lg-12">
+        <label class="col-sm-5 col-md-5 col-lg-5" for="dcDrink">Drink:</label>
+        <label class="col-sm-4 col-md-4 col-lg-4 " for="dcDrink">rating:</label>
+      </div><br><br>
+      <div class="col-sm-12 col-md-12 col-lg-12 panel-body" ng-hide="drinkList.length>0">
+        <h3 style="text-align:center">Search for dirnk and add them to your cabinet</h3>
+      </div>
+    <ul class="panel-body" id="dcDrink">
+      <li style="list-style-type: none;" class="" ng-repeat="drink in drinkList | orderBy:text">
+        <div class="drinkName col-sm-4 col-md-4 col-lg-4">
+          {{drink.name}}
+        </div>
+       <div class="col-sm-4 col-md-4 col-lg-4">
+          {{drink.rating}}
+        </div>
+        <div class="drinkRemove col-sm-2 col-md-2 col-lg-2">
+          <a class="btn btn-danger btn-sm" ng-click="remove(drink)">
+            <span class="glyphicon glyphicon-remove"></span>
+            Remove
+          </a>
+        </div><br><br>
+      </li>
+    </ul>
+  </div>
+</div>
