@@ -1,7 +1,6 @@
 # Node.
 node_modules
 npm-debug.log
-dist
 
 # Windows image file caches
 Thumbs.db
