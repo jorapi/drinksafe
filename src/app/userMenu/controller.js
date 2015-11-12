@@ -6,7 +6,7 @@ angular.module('RDash')
   $http.get("/auth/user")
    .success(function(response){
      $scope.userJSON = response;
-      if (response.profiles.length > 0){
+      if (response.profiles != null && response.profiles.length > 0){
         $scope.userMenuIsLoggedIn = true;
         $scope.userMenuName = response.profiles[0].profile.displayName;
       }

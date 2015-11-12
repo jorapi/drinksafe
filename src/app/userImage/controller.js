@@ -7,6 +7,8 @@ angular.module('RDash')
   function getUserImage() {
     $scope.userImgURL = "img/avatar.jpg";
     $http.get("/auth/user")
-     .success(function(response){$scope.userImgURL = "//graph.facebook.com/" + response.profiles[0].externalId + "/picture";});
+     .success(function(response){if(response.profiles != null)
+       $scope.userImgURL = "//graph.facebook.com/" +
+       response.profiles[0].externalId + "/picture";});
 	 }
 });
