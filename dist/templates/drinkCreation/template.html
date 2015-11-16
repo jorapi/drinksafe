@@ -2,13 +2,11 @@
   <form drinkCreation name="drinkForm" ng-submit="submit()">
     <div class="row">
       <div class="col-sm-12 col-md-4 col-lg-4 ">
-        <img alt="Drink Photo" src="{{currentImage}}" style="max-width:320px"><br><br>
-        <div class="col-sm-12 col-md-offset-4">
+        <img class="center-block img-rounded" alt="Drink Photo" src="{{currentImage}}" style="max-width:320px"><br><br>
           <div style="position:relative;">
-            <!-- begin file upload shit -->
-            <div style="font-size:70%;" accept=".jpg, .gif, .png" class="btn btn-primary btn-upload" data="formData" on-success="onSuccess(response)" required="false" upload-button url="/api/CloudinaryImages/upload">Upload Image</div>
-            <!-- end file upload shit -->
-          </div>
+          <!-- begin file upload shit -->
+          <div style="font-size:70%;max-width:100px" accept=".jpg, .gif, .png" class="center-block btn btn-primary btn-upload" data="formData" on-success="onSuccess(response)" required="false" upload-button url="/api/CloudinaryImages/upload">Upload Image</div>
+          <!-- end file upload shit -->
         </div>
       </div>
       <div class="col-sm-12 col-md-8 col-lg-8 col-lg-offset-0">
