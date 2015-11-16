@@ -3,6 +3,13 @@
     <div class="row">
       <div class="col-sm-12 col-md-4 col-lg-4 ">
         <img alt="Drink Photo" src="{{currentImage}}" style="max-width:320px"><br><br>
+        <div class="col-sm-12 col-md-offset-4">
+          <div style="position:relative;">
+            <!-- begin file upload shit -->
+            <div style="font-size:70%;" accept=".jpg, .gif, .png" class="btn btn-primary btn-upload" data="formData" on-success="onSuccess(response)" required="false" upload-button url="/api/CloudinaryImages/upload">Upload Image</div>
+            <!-- end file upload shit -->
+          </div>
+        </div>
       </div>
       <div class="col-sm-12 col-md-8 col-lg-8 col-lg-offset-0">
         <div class="col-sm-12 col-md-12 col-lg-12 ">
@@ -16,13 +23,6 @@
           <textarea class="col-sm-12 col-md-12 col-lg-12 form-control" id="dcDescription" maxlength="500" name="desc" ng-model="drink.description" required rows="5" style="resize:none" type="text"></textarea><br>
           <span class="label label-success" ng-class="{'label-warning': drink.description.length >= 400, 'label-danger': drink.description.length >= 450 }">{{500- drink.description.length}}
             left</span><br><br>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div style="position:relative;">
-            <!-- begin file upload shit -->
-            <div accept=".jpg, .gif, .png" class="btn btn-primary btn-upload" data="formData" on-success="onSuccess(response)" required="false" upload-button url="/api/CloudinaryImages/upload">Upload Image</div>
-            <!-- end file upload shit -->
-          </div>
         </div>
       </div>
     </div>
