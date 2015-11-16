@@ -56,31 +56,30 @@
           <a href="#" onclick="document.getElementById('header-display').innerHTML = 'Home Page';">
             Home <span class="menu-icon fa fa-home"></span></a>
         </li>
-        <li class="sidebar-list">
-          <a href="#/drinkCreation" onclick="document.getElementById('header-display').innerHTML = 'Create';">
-            Recipe Creation <span class="menu-icon fa fa-pencil"></span></a>
-        </li>
         <!--<li class="sidebar-list">
           <a href="#/absolutSearch">Absolut Search<span class="menu-icon fa fa-pencil"></span></a>
         </li>-->
         <li class="sidebar-list">
           <a href="#/drinkSearch" onclick="document.getElementById('header-display').innerHTML = 'Search';">
-            Drink Search<span class="menu-icon fa fa-search"></span></a>
+            Search Drinks<span class="menu-icon fa fa-search"></span></a>
         </li>
+        <li ng-hide="hideUserMenu" class="ng-hide sidebar-list">
+          <a href="#/drinkCreation" onclick="document.getElementById('header-display').innerHTML = 'Create';">
+            Create a Drink <span class="menu-icon fa fa-pencil"></span></a>
+        </li>
+        <!-- Start User Menu -->
         <div ng-hide="hideUserMenu" class="ng-hide" id="userSideMenu">
           <li class="sidebar-title"><span>{{userFirstName}}'s Menu</span></li>
           <li class="sidebar-list">
             <a href="#/userFavorites" onclick="document.getElementById('header-display').innerHTML = 'Favorites';">
               My Favorites <span class="menu-icon fa fa-heart"></span></a>
           </li>
-          <!--<li class="sidebar-list">
-            <a href="#/absolutSearch">Absolut Search<span class="menu-icon fa fa-pencil"></span></a>
-          </li>-->
           <li class="sidebar-list">
             <a href="#/userCabinet" onclick="document.getElementById('header-display').innerHTML = 'Liquor Cabinet';">
               My Liquor Cabinet<span class="menu-icon fa fa-beer"></span></a>
           </li>
         <div>
+        <!-- End User Menu -->
       </ul>
       <div class="sidebar-footer">
         <!--<div class="col-xs-4">
