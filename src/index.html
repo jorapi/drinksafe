@@ -57,6 +57,20 @@
           <a href="#/drinkSearch" onclick="document.getElementById('header-display').innerHTML = 'Search';">
             Drink Search<span class="menu-icon fa fa-list"></span></a>
         </li>
+        <div ng-hide="hideUserMenu" class="ng-hide" id="userSideMenu">
+          <li class="sidebar-title"><span>{{userFirstName}}'s Menu</span></li>
+          <li class="sidebar-list">
+            <a href="#/userFavorites" onclick="document.getElementById('header-display').innerHTML = 'Favorites';">
+              My Favorites <span class="menu-icon fa fa-heart"></span></a>
+          </li>
+          <!--<li class="sidebar-list">
+            <a href="#/absolutSearch">Absolut Search<span class="menu-icon fa fa-pencil"></span></a>
+          </li>-->
+          <li class="sidebar-list">
+            <a href="#/userCabinet" onclick="document.getElementById('header-display').innerHTML = 'Liquor Cabinet';">
+              My Liquor Cabinet<span class="menu-icon fa fa-beer"></span></a>
+          </li>
+        <div>
       </ul>
       <div class="sidebar-footer">
         <!--<div class="col-xs-4">
