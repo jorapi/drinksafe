@@ -18,15 +18,20 @@
     "rating": {
       "type": "number"
     },
+    "numRatings":{
+      "type":"number"
+    },
+    "commented":{
+      "type":[
+        "string"
+      ]
+    },
     "userId": {
       "type": "number",
       "required": true
     },
     "color": {
       "type": "string"
-    },
-    "photoId": {
-      "type": "number"
     },
     "instructions": {
       "type": [
@@ -58,6 +63,15 @@
       "type": "belongsTo",
       "model": "User",
       "foreignKey": ""
+    },
+    "amounts": {
+      "type": "embedsMany",
+      "model": "amount",
+      "property": "amounts",
+      "options": {
+        "validate": false,
+        "forceId": false
+      }
     }
   },
   "acls": [],

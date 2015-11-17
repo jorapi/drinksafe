@@ -6,6 +6,9 @@ npm-debug.log
 Thumbs.db
 ehthumbs.db
 
+#memory database
+db.json
+
 # Folder config file
 Desktop.ini
 

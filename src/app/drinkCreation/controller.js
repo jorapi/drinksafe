@@ -1,7 +1,7 @@
 angular.module('RDash')
   .controller('drinkCreationController', function($scope, $http) {
     //check if user is logged in
-    $scope.hideUserMenu = true;
+    $scope.hideUserMenu = false;
     $http.get("/auth/user")
      .success(function(response){
        $scope.userJSON = response;
@@ -17,7 +17,8 @@ angular.module('RDash')
       "instructions": "",
       "description": "",
       "userId": 0,
-      "color": ""
+      "color": "",
+      "_amounts": []
     };
     $scope.recipe = {
       "name": "",
@@ -46,8 +47,18 @@ angular.module('RDash')
       for (i = 0; i < $scope.directions.length; ++i) {
         holdDirections.push($scope.directions[i].text);
       }
+      angular.forEach($scope.ingredients, function(ing, i){
+        $scope.drink._amounts.push({
+          "ingredientID": ing.id,
+          "amount": ing.amount,
+          "unit": "oz",
+          "id": i
+        });
+      });
+
       $scope.drink.photo=$scope.currentImage;
       $scope.drink.instructions = holdDirections;
+      console.log($scope.drink);
       $http.put("/api/drinks", $scope.drink)
         .success(function(response) {
           for (i = 0; i < $scope.ingredients.length; ++i) {
