@@ -1,5 +1,5 @@
 angular.module('RDash')
-  .controller('drinkSearchController', function($scope, $http, $anchorScroll, $location, $routeParams) {
+  .controller('drinkSearchController', function($scope, $http, $anchorScroll, $location, $routeParams, $stateParams) {
 
 
     $http.get("api/drinks")
@@ -21,7 +21,7 @@ angular.module('RDash')
     //     $anchorScroll();
     //   }
     // };
-
+    $scope.search = $location.search().search;
 
     $scope.unexpand=function() {
       angular.forEach($scope.drinks, function(drink, index){
