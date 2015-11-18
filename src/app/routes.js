@@ -32,7 +32,7 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 templateUrl: 'templates/drinkSearch.html'
             })
             .state('drinkView', {
-                url: '/drinkView/:drinkId',
+                url: '/drinkView',
                 templateUrl: 'templates/drinkView.html'
 
             })

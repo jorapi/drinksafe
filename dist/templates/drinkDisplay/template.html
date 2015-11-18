@@ -1,8 +1,7 @@
 <div class="drinkDisplay">
-
-  <div class="row top" ng-show="topDisplay">
+  <div class="row top">
     <div class="col-sm-4 col-md-4 col-lg-4 ">
-      <img alt="Drink Photo" src="img/red-solo-cup.jpg" style="max-width:320px"><br><br>
+      <img alt="Image not found" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" class="img-responsive"  src="{{dataDrink.photo}}" style="max-width:320px"><br><br>
     </div>
 
     <div class="col-sm-8col-md-8 col-lg-8 col-lg-offset-0 ">
@@ -17,7 +16,7 @@
   </div>
 
   <div>
-    <ul  ng-show="topDisplay" class=" col-sm-12 col-md-12 col-lg-12 row">
+    <ul   class=" col-sm-12 col-md-12 col-lg-12 row">
       <li class="row  col-sm-6 col-md-6 col-lg-6 lineLeft" style="list-style-type: none;" ng-repeat="ing in dataIngredient">
         <span class="col-sm-6 col-md-6 col-lg-6" style="word-wrap: break-word">
           {{ing.text}}
