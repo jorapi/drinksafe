@@ -35,12 +35,23 @@
       "model": "drink",
       "foreignKey": ""
     },
-    "ingredients": {
-      "type": "hasMany",
-      "model": "ingredient",
-      "foreignKey": ""
+    "amounts": {
+      "type": "embedsMany",
+      "model": "amount",
+      "property": "amounts",
+      "options": {
+        "validate": false,
+        "forceId": false
+      }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+     "principalType": "ROLE",
+     "principalId": "$owner",
+     "permission": "ALLOW",
+     "property": "__get__amounts"
+    }
+  ],
   "methods": {}
 }

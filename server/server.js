@@ -55,7 +55,8 @@ boot(app, __dirname, function(err) {
 
 // The access token is only available after boot
 app.middleware('auth', loopback.token({
-  model: app.models.accessToken
+  model: app.models.accessToken,
+  currentUserLiteral: 'me'
 }));
 
 app.middleware('session:before', loopback.cookieParser(app.get('cookieSecret')));

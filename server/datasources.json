@@ -10,8 +10,8 @@
     "connector": "loopback-connector-mongodb"
   },
   "cloudinary": {
+    "url": "https://api.cloudinary.com/v1_1/hiqbii68e",
     "name": "cloudinary",
-    "connector": "loopback-component-cloudinary",
-    "url": "https://api.cloudinary.com/v1_1/hiqbii68e"
+    "connector": "loopback-component-cloudinary"
   }
 }

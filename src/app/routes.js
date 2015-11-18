@@ -35,6 +35,11 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/drinkView/:drinkId',
                 templateUrl: 'templates/drinkView.html'
 
+            })
+            .state('userCabinet', {
+                url: '/userCabinet',
+                templateUrl: 'templates/userCabinet.html'
+
             });
 
     }

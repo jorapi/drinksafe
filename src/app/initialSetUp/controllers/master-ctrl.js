@@ -19,6 +19,7 @@ function MasterCtrl($scope, $cookieStore, $http) {
         if (response.profiles != null && response.profiles.length > 0){
           $scope.hideUserMenu = false;
           $scope.userFirstName = response.profiles[0].profile.displayName.split(" ")[0].toUpperCase();
+          $scope.currentUser = response;
         }
       });
 

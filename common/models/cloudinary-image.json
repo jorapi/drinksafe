@@ -1,4 +1,9 @@
 {
-    "name": "CloudinaryImage",
-    "base": "Model"
+  "name": "CloudinaryImage",
+  "base": "Model",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
 }
