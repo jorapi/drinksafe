@@ -21,7 +21,9 @@ angular.module('RDash')
     //     $anchorScroll();
     //   }
     // };
-    $scope.search = $location.search().search;
+    if($location.search().search != null){
+      $scope.search = $location.search().search;
+    }
 
     $scope.unexpand=function() {
       angular.forEach($scope.drinks, function(drink, index){
