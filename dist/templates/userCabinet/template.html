@@ -1,3 +1,94 @@
 <div class="container-fluid" ng-hide="hideUserMenu">
-  
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 panel panel-primary">
+      <br>
+      <div class="panel-heading col-sm-12 col-md-12 col-lg-12">
+        <label class="col-sm-5 col-md-5 col-lg-5" for="dcIngredients">Ingredients:</label>
+        <label class="col-sm-4 col-md-4 col-lg-4 " for="dcIngredients">Amount:</label>
+      </div><br><br>
+      <div class="col-sm-12 col-md-12 col-lg-12 panel-body" ng-hide="ingredients.length>0">
+        <h3 style="text-align:center">Your cabinet is empty!</h3>
+      </div>
+      <ul class="panel-body" id="dcIngredients">
+        <li class="" ng-repeat="ing in ingredients | orderBy:text" style="list-style-type: none;">
+          <div class="ingName col-sm-5 col-md-5 col-lg-5">
+            {{ing.text}}
+          </div>
+          <div class="ingAmount col-sm-5 col-md-5 col-lg-5 btn-group">
+            {{ing.amount}}
+          </div>
+          <div class="ingRemove col-sm-2 col-md-2 col-lg-2">
+            <a class="btn btn-danger btn-sm" ng-click="remove(ing)">
+              <span class="glyphicon glyphicon-remove"></span>
+              Remove
+            </a>
+          </div><br><br>
+        </li>
+      </ul>
+      <div class="panel-footer col-sm-12 col-md-12 col-lg-12">
+        <a class="btn btn-success col-sm-2 col-md-2 col-lg-2 col-sm-offset-10" data-toggle="modal" data-target="#myModal"> Add</a>
+      </div>
+    </div>
+    <!--<div class="ingAdd col-sm-6 col-md-6 col-lg-5 col-lg-offset-1 panel panel-info">
+      <br>
+      <input class="form-control panel-heading" ng-model="search" placeholder="Search For Ingredients" type="search"><br>
+      <ul class="panel-body">
+        <li class="" ng-repeat="ingre in dataIngredients | filter:search | orderBy:text | limitTo:10" style="list-style-type: none;">
+          <div class=" col-sm-4 col-md-4 col-lg-5">
+            {{ingre.text}}
+          </div>
+          <div class="col-sm-5 col-md-5 col-lg-5">
+            {{ingre.type}}
+          </div>
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <a class="btn btn-info" ng-click="addIng(ingre)">Add</a>
+          </div><br><br>
+        </li>
+      </ul>
+    </div>-->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Add Ingredients to Cabinet</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+            <div class="ingAdd col-sm-12 col-md-12 col-lg-12 panel panel-info">
+              <br>
+              <input class="form-control panel-heading" ng-model="search" placeholder="Search For Ingredients" type="search"><br>
+              <ul class="panel-body">
+                <li class="" ng-repeat="ingre in dataIngredients | filter:search | orderBy:text | limitTo:10" style="list-style-type: none;">
+                  <div class=" col-sm-3 col-md-3 col-lg-3">
+                    {{ingre.text}}
+                  </div>
+                  <div class="col-sm-3 col-md-3 col-lg-3">
+                    {{ingre.type}}
+                  </div>
+                  <div class="ingAmount col-sm-4 col-md-4 col-lg-4 btn-group">
+                    <input class="form-control btn btn-default" max="99" min="0" name="amount" ng-model="ingre.amount" required step=".01" style="max-width:60%" type="number">
+                    <p class="btn btn-primary">
+                      oz
+                    </p>
+                  </div>
+                  <div class="col-sm-2 col-md-2 col-lg-2">
+                    <a class="btn btn-success" ng-click="addIng(ingre)">Add</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-default" data-dismiss="modal">Close</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
