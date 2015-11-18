@@ -21,9 +21,17 @@ angular.module('RDash')
     //     $anchorScroll();
     //   }
     // };
+<<<<<<< HEAD
     if($location.search().search != null){
       $scope.search = $location.search().search;
     }
+=======
+$scope.redirect=function(id){
+
+//  $location.search('drinkId', id);
+  $location.path("/drinkView").search({drinkId: id});
+};
+>>>>>>> origin/master
 
     $scope.unexpand=function() {
       angular.forEach($scope.drinks, function(drink, index){
