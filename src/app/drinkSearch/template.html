@@ -28,7 +28,7 @@
     <ul class="panel-body list-group searchList">
       <li class="list-group-item  row searchListItem" ng-repeat="drink in drinks | filter:search | orderBy:filter | limitTo:limit" style="list-style-type: none;">
         <div class="searchImg " id="" ng-class="{'col-sm-2 col-md-2 col-lg-2': !drink.expand, 'col-sm-4 col-md-4 col-lg-4': drink.expand }">
-          <img ng-dblclick="redirect(drink.id)" ng-click="unexpand(); drink.expand=!drink.drink.expand" alt="Image not found" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" class="img-responsive" id="drinkImg" src="{{drink.photo}}" style="max-width:100%; max-hight:200px"><br><br>
+          <img ng-dblclick="redirect(drink.id)" ng-click="unexpand(); drink.expand=!drink.drink.expand" alt="Image not found" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" class="img-responsive img-thumbnail" id="drinkImg" src="{{drink.photo}}" style="max-width:100%; max-hight:200px"><br><br>
         </div>
         <div class="searchText row" ng-class="{'col-sm-10 col-md-10 col-lg-10': !drink.expand, 'col-sm-8 col-md-8 col-lg-8 textxpand': drink.expand }">
 
