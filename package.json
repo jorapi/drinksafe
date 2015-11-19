@@ -10,6 +10,7 @@
     "node": "0.12.x"
   },
   "dependencies": {
+    "angucomplete-alt": "^2.1.0",
     "bower": "^1.3.9",
     "cloudinary": "",
     "compression": "^1.0.3",

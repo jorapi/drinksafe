@@ -29,7 +29,8 @@
     "angular-route": "~1.2.21",
     "bootstrap": "~3.2.0",
     "font-awesome": "~4.1.0",
-    "angular-upload": "~1.0.12"
+    "angular-upload": "~1.0.12",
+    "angucomplete-alt" : "~2.1.0"
   },
   "repository": {
     "type": "git",

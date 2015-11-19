@@ -1,0 +1,95 @@
+.drinkSearch{
+  padding:10px;
+  display:block;
+}
+
+.drinkSearch .searchImg {
+  cursor:pointer;
+  -webkit-transition: width 1s, height 1s;
+  -moz-transition: width 1s, height 1s;
+  -o-transition: width 1s, height 1s;
+  transition: width 1s, height 1s;
+}
+.drinkSearch .searchText {
+  -webkit-transition: width 1s, height 1s;
+  -moz-transition: width 1s, height 1s;
+  -o-transition: width 1s, height 1s;
+  transition: width 1s, height 1s;
+}
+.drinkSearch .searchList{
+
+}
+.drinkSearch .searchListItem{
+
+}
+
+
+
+.drinkSearch .textName {
+  max-height: 100%;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 2vw;
+  border-bottom: solid #428bca;
+  border-width: 1px;
+  cursor:pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.drinkSearch .textDes {
+  max-height: 100%;
+  overflow: hidden;
+  font-size: 1.5vw;
+  word-wrap: break-word;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.drinkSearch .textExpand .textName {
+  font-size: 2.2vw;
+overflow: auto;
+}
+.drinkSearch .textExpand .textDes {
+  font-size: 1.6vw;
+  overflow: auto;
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.drinkSearch .dispalyDrink {
+  opacity: 1;
+  min-height: 0vh;
+  max-height:100%;
+}
+.drinkSearch .dispalyDrink.ng-hide-add, .dispalyDrink.ng-hide-remove {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transition: width 1s, height 1s, opacity 1s;
+  -moz-transition: width 1s, height 1s, opacity 1s;
+  -o-transition: width 1s, height 1s, opacity 1s;
+  transition: width 1s, height 1s, opacity 1s;
+}
+.drinkSearch .dispalyDrink.ng-hide {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transition: width 1s, height 1s, opacity 1s;
+  -moz-transition: width 1s, height 1s, opacity 1s;
+  -o-transition: width 1s, height 1s, opacity 1s;
+  transition: width 1s, height 1s, opacity 1s;
+  opacity: 0;
+  height: 0px;
+}
