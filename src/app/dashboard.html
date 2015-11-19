@@ -1,7 +1,14 @@
 <div class="row">
 	<div class="col-lg-6 col-lg-offset-3">
-		<!-- <div>{{currentUser}}</div> -->
-    <rd-widget>
+
+<style type="text/css">
+.carousel-caption h2{
+	font-size: 1.4em;
+	font-family: 'Pacifico', cursive;
+	padding-bottom: .4em;
+}
+</style>
+		<rd-widget>
     	<rd-widget-header icon="fa fa-glass" title="Featured Drinks">
     	</rd-widget-header>
     	<rd-widget-body>
@@ -13,20 +20,37 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
           </ol>
 
+
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img src="img/one.jpg" alt="one">
-            </div>
 
-            <div class="item">
-              <img src="img/two.jpg" alt="two">
-            </div>
 
-            <div class="item">
-              <img src="img/three.jpg" alt="three">
-            </div>
-          </div>
+						<div class="item active">
+ 						<a href="http://localhost:3000/#/drinkView?drinkId=564a91081eb2750300fbae60">
+							<img src="img/one.jpg" alt="one">
+						</a>
+						<div class = "carousel-caption">
+							<h2> Rum Lemon Punch</h1>
+							</div>
+					</div>
+
+					<div class="item">
+					<a href="http://localhost:3000/#/drinkView?drinkId=564d2d61aed54c64107f2b36">
+						<img src="img/two.jpg" alt="two">
+					</a>
+					<div class = "carousel-caption">
+						<h2> Pineapple Margarita</h1>
+						</div>
+				</div>
+
+				<div class="item">
+				<a href="http://localhost:3000/#/drinkView?drinkId=564d2eb7aed54c64107f2b38">
+					<img src="img/three.jpg" alt="three">
+				</a>
+				<div class = "carousel-caption">
+					<h2> Cranberry Cocktail</h1>
+					</div>
+			</div>
 
           <!-- Left and right controls (don't work yet)
           <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
