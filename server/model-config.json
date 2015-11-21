@@ -56,8 +56,8 @@
     "$promise": {},
     "$resolved": true
   },
-  "amount":{
-    "dataSource":"drinksDB",
+  "amount": {
+    "dataSource": "drinksDB",
     "public": false,
     "$promise": {},
     "$resolved": true

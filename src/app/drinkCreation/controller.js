@@ -10,23 +10,21 @@ angular.module('RDash')
         }
       });
 
+    $scope.currentUserId = -1;
+    $http.get("/api/users/me/")
+      .success(function(response) {
+        $scope.currentUserId = response.id;
+        $scope.drink.userId = response.id;
+      });
     $scope.currentImage = "img/red-solo-cup.jpg";
     $scope.drink = {
       "name": "",
       "rating": 0,
       "instructions": "",
       "description": "",
-      "userId": 0,
+      "userId": $scope.currentUserId,
       "color": "",
       "_amounts": []
-    };
-    $scope.recipe = {
-      "name": "",
-      "rating": 0,
-      "instructions": "",
-      "description": "",
-      "userId": 0,
-      "color": ""
     };
     $scope.image = {
       "file": "",
