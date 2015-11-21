@@ -24,7 +24,7 @@ angular.module('RDash')
           $scope.me = response;
           for (i = 0; i < $scope.me._amounts.length; ++i) {
             $scope.currentibecauseangularisdumb = i;
-            $http.get("/api/ingredients/5647bd23141014a838417b7c")
+            $http.get("/api/ingredients/" + $scope.me._amounts[i].ingredientID) //todo: replace with current ingredientid
               .success(function(response) {
                 $scope.currIng = response;
                 $scope.ingredients.push({
@@ -34,6 +34,10 @@ angular.module('RDash')
                   "unit": $scope.me._amounts[$scope.currentibecauseangularisdumb].unit,
                   "id": $scope.currIng.id
                 });
+                for(j = 0; j < $scope.dataIngredients.length; ++j){
+                  if($scope.dataIngredients[j].id == $scope.currIng.id)
+                    $scope.dataIngredients.splice(j, 1);
+                }
               });
           }
         });

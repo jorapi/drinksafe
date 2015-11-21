@@ -18,11 +18,11 @@
     "rating": {
       "type": "number"
     },
-    "numRatings":{
-      "type":"number"
+    "numRatings": {
+      "type": "number"
     },
-    "commented":{
-      "type":[
+    "commented": {
+      "type": [
         "string"
       ]
     },

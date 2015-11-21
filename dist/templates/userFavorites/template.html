@@ -1,0 +1,24 @@
+<div class="container-fluid" ng-hide="hideUserMenu">
+  <div class="row">
+    <rd-widget class="col-sm-6 col-md-6 col-lg-6">
+    	<rd-widget-header icon="fa fa-pencil" title="My Created Drinks">
+    	</rd-widget-header>
+    	<rd-widget-body>
+      </rd-widget-body>
+    </rd-widget>
+    <rd-widget class="col-sm-6 col-md-6 col-lg-6">
+    	<rd-widget-header icon="fa fa-heart" title="My Favorited Drinks">
+    	</rd-widget-header>
+    	<rd-widget-body>
+        <ul class="list-group">
+          <li class="list-group-item  row" ng-repeat="drink in dataFav" style="list-style-type: none;">
+            <div class="col-sm-10 col-md-10 col-lg-10">
+              <a href="/#/drinkView?drinkId={{drink.id}}">{{drink.name}}</a>
+            </div>
+            <i class="col-sm-2 col-md-2 col-lg-2 fa fa-times fa-2x"></i>
+          </li>
+        </ul>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+</div>

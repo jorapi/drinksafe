@@ -4,8 +4,9 @@
       <img alt="Image not found" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" class="img-responsive"  src="{{dataDrink.photo}}" style="max-width:320px"><br><br>
     </div>
 
-    <div class="col-sm-8col-md-8 col-lg-8 col-lg-offset-0 ">
+    <div class="container-fluid col-sm-8col-md-8 col-lg-8 col-lg-offset-0 ">
       <div class="col-sm-12 col-md-12 col-lg-12 ">
+        <i ng-hide="hideHeart" ng-click="favorite()" ng-class="{false:'fa fa-heart-o fa-2x', true:'fa fa-heart fa-2x'}[favorited]" class="col-lg-offset-11"></i>
         <h1 id="dsName">{{dataDrink.name}}</h1>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-12">

@@ -7,7 +7,13 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "favoriteDrinks": {
+        "type": [
+          "string"
+        ]
+      }
+  },
   "validations": [],
   "relations": {
     "accessTokens": {
@@ -28,12 +34,7 @@
     "customDrinks": {
       "type": "hasMany",
       "model": "drink",
-      "foreignKey": ""
-    },
-    "drinks": {
-      "type": "hasMany",
-      "model": "drink",
-      "foreignKey": ""
+      "foreignKey": "userId"
     },
     "amounts": {
       "type": "embedsMany",
@@ -47,23 +48,11 @@
   },
   "acls": [
     {
-     "principalType": "ROLE",
-     "principalId": "$owner",
-     "permission": "ALLOW",
-     "property": "__get__amounts"
-   },
-   {
-    "principalType": "ROLE",
-    "principalId": "$owner",
-    "permission": "ALLOW",
-    "property": "__post__amounts"
-  },
-  {
-   "principalType": "ROLE",
-   "principalId": "$owner",
-   "permission": "ALLOW",
-   "property": "__delete__amounts"
-  }
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "*"
+    }
   ],
   "methods": {}
 }
