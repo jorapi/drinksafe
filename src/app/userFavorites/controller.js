@@ -24,6 +24,11 @@ angular.module('RDash')
           }
         });
 
+        $http.get("/api/users/me/customDrinks")
+          .success(function(response) {
+            $scope.dataCre = response;
+        });
+
         $scope.unFavorite=function(drinkId) {
           var i = $scope.me.favoriteDrinks.indexOf(drinkId);
           $scope.me.favoriteDrinks.splice(i, 1);
