@@ -23,4 +23,12 @@ angular.module('RDash')
             });
           }
         });
+
+        $scope.unFavorite=function(drinkId) {
+          var i = $scope.me.favoriteDrinks.indexOf(drinkId);
+          $scope.me.favoriteDrinks.splice(i, 1);
+          $http.put("/api/users/me", $scope.me);
+          i = $scope.dataFav.indexOf(drinkId);
+          $scope.dataFav.splice(i, 1);
+        };
   });
