@@ -1,3 +1,5 @@
+.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
+
 .drinkSearch{
   padding:10px;
   display:block;
@@ -93,8 +95,6 @@ overflow: auto;
   opacity: 0;
   height: 0px;
 }
-
-.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
 
 
 .drinkDisplay .textName{
@@ -237,7 +237,6 @@ overflow: auto;
   opacity: 0;
   height: 0px;
 }
-
 
 
 

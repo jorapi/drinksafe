@@ -2,10 +2,10 @@
   <form drinkCreation name="drinkForm" ng-submit="submit()">
     <div class="row">
       <div class="col-sm-12 col-md-4 col-lg-4 ">
-        <img class="center-block img-rounded" alt="Drink Photo" src="{{currentImage}}" style="max-width:320px"><br><br>
-          <div style="position:relative;">
+        <img alt="Drink Photo" class="center-block img-rounded" src="{{currentImage}}" style="max-width:100%"><br><br>
+        <div style="position:relative;">
           <!-- begin file upload shit -->
-          <div style="font-size:70%;max-width:100px" accept=".jpg, .gif, .png" class="center-block btn btn-primary btn-upload" data="formData" on-success="onSuccess(response)" required="false" upload-button url="/api/CloudinaryImages/upload">Upload Image</div>
+          <div accept=".jpg, .gif, .png" class="center-block btn btn-primary btn-upload" data="formData" on-success="onSuccess(response)" required="false" style="font-size:70%;max-width:100px" upload-button url="/api/CloudinaryImages/upload">Upload Image</div>
           <!-- end file upload shit -->
         </div>
       </div>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-6 panel panel-primary">
+      <div class=" col-sm-6 col-md-6 col-lg-6  panel panel-primary">
         <br>
         <div class="panel-heading col-sm-12 col-md-12 col-lg-12">
           <label class="col-sm-5 col-md-5 col-lg-5" for="dcIngredients">Ingredients:</label>
@@ -34,8 +34,8 @@
         <div class="col-sm-12 col-md-12 col-lg-12 panel-body" ng-hide="ingredients.length>0">
           <h3 style="text-align:center">Search for ingredients on the right to add them to your drinks recipe.</h3>
         </div>
-        <ul class="panel-body" id="dcIngredients">
-          <li class="" ng-repeat="ing in ingredients | orderBy:text" style="list-style-type: none;">
+        <ul class="panel-body list-group" id="dcIngredients">
+          <li class="list-group-item" ng-repeat="ing in ingredients | orderBy:text" style="list-style-type: none;">
             <div class="ingName col-sm-4 col-md-4 col-lg-4">
               {{ing.text}}
             </div>
@@ -54,11 +54,11 @@
           </li>
         </ul>
       </div>
-      <div class="ingAdd col-sm-6 col-md-6 col-lg-5 col-lg-offset-1 panel panel-info">
+      <div class="ingAdd col-sm-6 col-md-6 col-lg-5 col-lg-offset-1 panel panel-info ">
         <br>
-        <input class="form-control panel-heading" ng-model="search" placeholder="Search For Ingredients" type="search"><br>
-        <ul class="panel-body">
-          <li class="" ng-repeat="ingre in dataIngredients | filter:search | orderBy:text | limitTo:10" style="list-style-type: none;">
+        <input class="form-control panel-heading" ng-click="dirty=true" ng-model="search" placeholder="Search For Ingredients" type="search"><br>
+        <ul class="panel-body list-group" ng-hide="adding">
+          <li class="list-group-item" ng-repeat="ingre in dataIngredients | filter:search | orderBy:text | limitTo:6" style="list-style-type: none;">
             <div class=" col-sm-4 col-md-4 col-lg-5">
               {{ingre.text}}
             </div>
@@ -69,7 +69,28 @@
               <a class="btn btn-info" ng-click="addIng(ingre)">Add</a>
             </div><br><br>
           </li>
+          <br>
+          <div class="col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+            <a ng-click="adding=true" ng-show="dirty" style="margin:auto;">Dont see your ingredient click here to add it</a>
+          </div>
         </ul>
+
+        <div class="ingredientAdd col-sm-12 col-md-12 col-lg-12 row well well-sm" ng-show="adding">
+          <h3 style="text-align:center">Ingredient Creation</h3>
+          <div class="col-sm-6 col-md-6 col-lg-6 form-group" ng-class="{'has-error': !validText }">
+            <label for="igText">Name:</label><br>
+            <input class="form-control " id="igText" maxlength="20" minlength="3" name="igText" ng-model="add.text" placeholder="e.g. Bacardi, Absolute" style="max-width:100%;" type="text">
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6 form-group" ng-class="{'has-error': !validType }">
+            <label for="igType">Type:</label><br>
+            <input class="form-control " id="igType" maxlength="20" minlength="3" name="igType" ng-model="add.type" placeholder="e.g. Rum, Vodka" style="max-width:100%;" type="text">
+          </div>
+          <div class=" col-sm-12 col-md-12 col-lg-12" role="group">
+            <button class="btn btn-success" ng-click="addIngredient();" style="float:left " type="button">Save</button>
+            <button class="btn btn-danger" ng-click="adding=false;add.text='';add.type='';validText=true;validType=true;" style="float:right" type="button">Cancel</button>
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="ingDirections col-sm-12 col-md-12 col-lg-12">
@@ -112,7 +133,7 @@
       </div>
     </div>
     <br><br>
-    <button type="submit" class="btn btn-primary" ng-click="" ng-disabled="ingredients.length<=0 || directions.length<=0">Submit</button>
+    <button class="btn btn-primary" ng-click="" ng-disabled="ingredients.length<=0 || directions.length<=0" type="submit">Submit</button>
   </form>
   <br><br><br>
 
