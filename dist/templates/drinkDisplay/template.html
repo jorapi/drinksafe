@@ -1,59 +1,67 @@
 <div class="drinkDisplay">
   <div class="row top">
-    <div class="col-sm-4 col-md-4 col-lg-4 ">
-      <img alt="Image not found" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" class="img-responsive"  src="{{dataDrink.photo}}" style="max-width:320px"><br><br>
+    <div class="col-sm-4 col-md-4 col-lg-4 row">
+      <img alt="Image not found" class="col-sm-12 col-md-12 col-lg-12 " class="img-responsive" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" src="{{dataDrink.photo}}" style="max-width:320px"><br><br>
     </div>
 
-    <div class="container-fluid col-sm-8col-md-8 col-lg-8 col-lg-offset-0 ">
+    <div class="container-fluid col-sm-8 col-md-8 col-lg-8 row">
       <div class="col-sm-12 col-md-12 col-lg-12 ">
-        <i ng-hide="hideHeart" ng-click="favorite()" ng-class="{false:'fa fa-heart-o fa-2x', true:'fa fa-heart fa-2x'}[favorited]" class="col-lg-offset-11"></i>
-        <h1 id="dsName">{{dataDrink.name}}</h1>
+        <i class="col-lg-offset-11" ng-class="{false:'fa fa-heart-o fa-2x', true:'fa fa-heart fa-2x'}[favorited]" ng-click="favorite()" ng-hide="hideHeart"></i>
+        <h1 class="textName" id="dsName">{{dataDrink.name}}</h1>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h4>{{dataDrink.description}}</h4>
+        <h4 class="textDes">{{dataDrink.description}}</h4>
       </div>
     </div>
 
   </div>
 
-  <div>
-    <ul   class=" col-sm-12 col-md-12 col-lg-12 row">
-      <li class="row  col-sm-6 col-md-6 col-lg-6 lineLeft" style="list-style-type: none;" ng-repeat="ing in dataIngredient">
-        <span class="col-sm-6 col-md-6 col-lg-6" style="word-wrap: break-word">
-          {{ing.text}}
-        </span>
-        <span class="col-sm-6 col-md-6 col-lg-6" style="word-wrap: break-word">
-          {{ing.type}}
-        </span>
-        <br>
-      </li>
-    </ul>
+  <div class="bottom">
+    <div class="panel panel-primary col-sm-12 col-md-6 col-lg-6 ingredients row "></br>
+    <div class="panel-heading col-sm-12 col-lg-12 col-md-12">
 
+      <span>Ingredients:</span>
+    </div>
+  </br>
+  <ul class=" row panel-body">
+</br>
+    <li class="row  col-sm-12 col-md-12 col-lg-12 lineLeft" ng-repeat="ing in dataIngredient" style="list-style-type: none;">
+      <span class="col-sm-4 col-md-4 col-lg-4 inWords" style="word-wrap: break-word">
+        {{ing.text}}
+      </span>
+      <span class="col-sm-4 col-md-4 col-lg-4 inWords" style="word-wrap: break-word">
+        {{ing.type}}
+      </span>
+      <span class="col-sm-4 col-md-4 col-lg-4 inWords" style="word-wrap: break-word">
+        {{ing.amount.amount}}{{ing.amount.unit}}
+      </span>
+      <br>
+    </li>
+  </ul>
 
-    <ul  class="list-group col-sm-12 col-md-12 col-lg-12 row">
-      <li class="row list-group-item" style="list-style-type: none;" ng-repeat="ins in dataDrink.instructions track by $index">
-        <div class="col-sm-1 col-md-1 col-lg-1" >
-          {{dataDrink.instructions.indexOf(ins)+1}}
-        </div>
-        <span class="col-sm-8 col-md-8 col-lg-8" style="word-wrap: break-word">
-          {{ins}}
-        </span>
-        <br>
-      </li>
-    </ul>
+</div>
+<div class="steps">
 
+<ul class="list-group col-sm-12 col-md-12 col-lg-12 row ">
+  <li class="row list-group-item" ng-repeat="ins in dataDrink.instructions track by $index" style="list-style-type: none;">
+    <div class="col-sm-1 col-md-1 col-lg-1">
+      {{dataDrink.instructions.indexOf(ins)+1}}
+    </div>
+    <span class="col-sm-8 col-md-8 col-lg-8" style="word-wrap: break-word">
+      {{ins}}
+    </span>
+    <br>
+  </li>
+</ul>
+</div>
 
-    <!--<ul  class="list-group col-sm-12 col-md-12 col-lg-12 row">
-      <li class="row list-group-item" style="list-style-type: none;" ng-repeat="dir in dataDrink.instructions">
-        <div class="col-sm-1 col-md-1 col-lg-1" >
-          {{dir}}
-        </div>
-        <span class="col-sm-8 col-md-8 col-lg-8" style="word-wrap: break-word">
-          {{dir}}
-        </span>
-        <br>
-      </li>
-    </ul>-->
-
-  </div>
+</div>
+<div  class="col-sm-12 col-md-12 col-lg-12" ng-class="{'entered':(enter && !hasRated && currentUser.id)||permColor }" ng-mouseenter="divEnter();enter=true" ng-mouseLeave="divLeave();enter=false" ng-disabled="hasRated">
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate===0, 'fa fa-star fa-2x':rate>=.75, 'fa fa-star-half-o fa-2x':rate>=.25 && rate<.75}" ng-mouseover="mouse(1)" ng-click="rateClick(1)" ng-disabled="hasRated"></i>
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 1.25, 'fa fa-star fa-2x':rate>1.75, 'fa fa-star-half-o fa-2x':rate>1.25 && rate<=1.75}"  ng-mouseover="mouse(2)" ng-click="rateClick(2)" ng-disabled="hasRated"></i>
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 2.25, 'fa fa-star fa-2x':rate>2.75, 'fa fa-star-half-o fa-2x':rate>2.25 && rate<=2.75}"  ng-mouseover="mouse(3)" ng-click="rateClick(3)" ng-disabled="hasRated"></i>
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 3.25, 'fa fa-star fa-2x':rate>3.75, 'fa fa-star-half-o fa-2x':rate>3.25 && rate<=3.75}"  ng-mouseover="mouse(4)" ng-click="rateClick(4)" ng-disabled="hasRated"></i>
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 4.25, 'fa fa-star fa-2x':rate>4.75, 'fa fa-star-half-o fa-2x':rate>4.25 && rate<=4.75}"  ng-mouseover="mouse(5)" ng-click="rateClick(5)" ng-disabled="hasRated"></i>
+</div>
+</div>
 </div>

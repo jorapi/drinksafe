@@ -24,7 +24,7 @@ angular.module('RDash')
     if($location.search().search != null){
       $scope.search = $location.search().search;
     }
-    
+
     $scope.redirect=function(id){
 
     //  $location.search('drinkId', id);

@@ -1,1 +1,44 @@
+.drinkDisplay .textName{
+  max-height: 100%;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 2vw;
+  border-bottom: solid #428bca;
+  border-width: 1px;
+  cursor:pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+ .drinkDisplay .textDes{
+   max-height: 100%;
+   overflow: hidden;
+   font-size: 1.5vw;
+   word-wrap: break-word;
+   -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+   -o-transition: all 1s ease;
+   -ms-transition: all 1s ease;
+   transition: all 1s ease;
+ }
 
+.drinkDisplay .bottom{
+  margin-left:1vw;
+}
+
+
+.drinkDisplay .inWords{
+  text-align:left;
+}
+
+.drinkDisplay .fa-star-half-o{
+  color:rgb(214, 161, 2);
+}
+.drinkDisplay .fa-star{
+  color:rgb(214, 161, 2);
+}
+.drinkDisplay .entered .fa-star{
+  color:red;
+}
