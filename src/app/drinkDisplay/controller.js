@@ -72,7 +72,7 @@ angular.module('RDash')
     };
 
     $scope.rated = function(val) {
-      if (!$scope.hasRated && $scope.currentUser.id) {
+      if (!$scope.hasRated && $scope.currentUser && $scope.currentUser.id) {
         $scope.dataDrink.rating += val - $scope.pastRate;
         if (!$scope.dataDrink.commented) {
           $scope.dataDrink.commented = [];
@@ -86,13 +86,13 @@ angular.module('RDash')
     };
 
     $scope.mouse = function(val) {
-      if (!$scope.hasRated && $scope.currentUser.id) {
+      if (!$scope.hasRated && $scope.currentUser && $scope.currentUser.id) {
         $scope.rate = val;
       }
     };
 
     $scope.rateClick = function(val) {
-      if (!$scope.hasRated && $scope.currentUser.id) {
+      if (!$scope.hasRated && $scope.currentUser && $scope.currentUser.id) {
         $scope.myRate = val;
         $scope.userRate = val;
         $scope.rated(val);
@@ -100,12 +100,12 @@ angular.module('RDash')
       }
     };
     $scope.divEnter = function() {
-      if (!$scope.hasRated && $scope.currentUser.id) {
+      if (!$scope.hasRated && $scope.currentUser && $scope.currentUser.id) {
         $scope.rate = $scope.myRate;
       }
     };
     $scope.divLeave = function() {
-      if (!$scope.hasRated && $scope.currentUser.id) {
+    if (!$scope.hasRated && $scope.currentUser && $scope.currentUser.id) {
         $scope.rate = $scope.userRate;
       }
     };
