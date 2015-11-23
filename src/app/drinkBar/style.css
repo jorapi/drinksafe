@@ -2,7 +2,7 @@
     overflow-y: auto;
     max-height: 200px; // your preference
 }
-.form-control{
+#drinkBar .form-control{
   width: 60%;
   margin-top: 10px;
 }
