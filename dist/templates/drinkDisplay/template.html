@@ -23,9 +23,9 @@
       <span>Ingredients:</span>
     </div>
   </br>
-  <ul class=" row panel-body">
+  <ul class=" row panel-body list-group">
 </br>
-    <li class="row  col-sm-12 col-md-12 col-lg-12 lineLeft" ng-repeat="ing in dataIngredient" style="list-style-type: none;">
+    <li class="row list-group-item col-sm-12 col-md-12 col-lg-12 lineLeft" ng-repeat="ing in dataIngredient" style="list-style-type: none;">
       <span class="col-sm-4 col-md-4 col-lg-4 inWords" style="word-wrap: break-word">
         {{ing.text}}
       </span>
@@ -41,13 +41,13 @@
 
 </div>
 <div class="steps">
-
+<label class="col-sm-12 col-md-12 col-lg-12" >Directions:</label><br>
 <ul class="list-group col-sm-12 col-md-12 col-lg-12 row ">
   <li class="row list-group-item" ng-repeat="ins in dataDrink.instructions track by $index" style="list-style-type: none;">
     <div class="col-sm-1 col-md-1 col-lg-1">
       {{dataDrink.instructions.indexOf(ins)+1}}
     </div>
-    <span class="col-sm-8 col-md-8 col-lg-8" style="word-wrap: break-word">
+    <span class="col-sm-11 col-md-11 col-lg-11" style="word-wrap: break-word">
       {{ins}}
     </span>
     <br>
