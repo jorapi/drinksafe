@@ -36,6 +36,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 templateUrl: 'templates/drinkView.html'
 
             })
+            .state('Features',{
+              url:'Features',
+              templateUrl: 'templates/Features.html'
+            })
             .state('userCabinet', {
                 url: '/userCabinet',
                 templateUrl: 'templates/userCabinet.html'
