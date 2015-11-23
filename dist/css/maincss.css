@@ -1,3 +1,5 @@
+.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
+
 .angucomplete-dropdown {
     overflow-y: auto;
     max-height: 200px; // your preference
@@ -154,8 +156,6 @@ overflow: auto;
   opacity: 0;
   height: 0px;
 }
-
-.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
 
 
 
