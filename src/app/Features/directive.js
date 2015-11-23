@@ -1,9 +1,9 @@
 angular.module('RDash')
-.directive('Features', function features(){
+.directive('features', function features(){
   return{
-    templateUrl: 'templates/Features/template.html',
-    controller:'featureController',
-    controllerAs:'featureCntrl',
+    templateUrl: 'templates/features/template.html',
+    controller:'featuresController',
+    controllerAs:'featuresCntrl',
     restrict:'E',
     scope:{}
   };

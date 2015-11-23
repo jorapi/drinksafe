@@ -1,5 +1,5 @@
 angular.module('RDash')
-  .controller('featureController', function($scope, $http){
+  .controller('featuresController', function($scope, $http){
     $scope.dataRec=[];
     $http.get("/api/drinks")
       .success(function(response){
