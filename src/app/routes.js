@@ -45,6 +45,11 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/userFavorites',
                 templateUrl: 'templates/userFavorites.html'
 
+            })
+            .state('features', {
+                url: '/features',
+                templateUrl: 'templates/features.html'
+
             });
 
     }
