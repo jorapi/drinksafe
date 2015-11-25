@@ -15,33 +15,33 @@
     ]
   },
   "user": {
-    "dataSource": "db",
+    "dataSource": "drinksDB",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "accessToken": {
-    "dataSource": "db",
+    "dataSource": "drinksDB",
     "public": false
   },
   "userCredential": {
-    "dataSource": "db",
+    "dataSource": "drinksDB",
     "public": false
   },
   "userIdentity": {
-    "dataSource": "db",
+    "dataSource": "drinksDB",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "drinksDB",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "drinksDB",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "drinksDB",
     "public": false
   },
   "drink": {
