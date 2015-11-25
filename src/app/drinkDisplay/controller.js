@@ -109,5 +109,40 @@ angular.module('RDash')
         $scope.rate = $scope.userRate;
       }
     };
+    $scope.drinkIt = function(){
+      if(!$scope.currentUser){
+        $scope.status = "You must be logged in to drink something";
+        return;
+      }
+      $http.get("/api/users/me/")
+        .success(function(response) {
+          $scope.me = response;
+          angular.forEach($scope.dataDrink._amounts, function(amount){
+            var removed = false;
+            $scope.removedAll = true;
+
+            angular.forEach($scope.me._amounts, function(amountYouHave){
+              if(amount.ingredientID == amountYouHave.ingredientID){ //if same ingredient
+                if(amount.amount <= amountYouHave.amount){ // if user has enough
+                  amountYouHave.amount -= amount.amount;  //remove amount from user.amounts
+                  removed = true;
+                }else{
+                  $scope.status = "You dont have enough ingredients " + amount.ingredientID;
+                  $scope.removedAll = false;
+                }
+              }
+            });
+            if(!removed){
+              $scope.status = "you have no ingredient " + amount.ingredientID;
+              $scope.removedAll = false;
+            }
+          });
+          if($scope.removedAll){
+            $http.put("/api/users/me", $scope.me);
+            console.log($scope.me);
+          }
+      });
+
+    };
 
   });
