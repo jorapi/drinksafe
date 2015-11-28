@@ -8,6 +8,7 @@ angular.module('RDash')
       });
     $scope.filter = "name";
     $scope.limit=10;
+    $scope.search="";
 
     // $scope.gotoAnchor = function(x) {
     //   var newHash = 'anchor' + x;
@@ -29,6 +30,19 @@ angular.module('RDash')
 
     //  $location.search('drinkId', id);
       $location.path("/drinkView").search({drinkId: id});
+    };
+
+    $scope.filterFunction = function(element){
+      console.log(element);
+      //return element.name.match(/^$scope.search/) ? true : false;
+      if($scope.search.length<=0){
+        return true;
+      }
+      if (element.name.toLowerCase().indexOf($scope.search.toLowerCase()) > -1){
+        return true;
+      }else{
+        return false;
+      }
     };
 
     $scope.unexpand=function() {
