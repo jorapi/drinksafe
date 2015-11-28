@@ -9,6 +9,13 @@ angular.module('RDash')
     $scope.filter = "name";
     $scope.limit=10;
     $scope.search="";
+    $scope.ingredients = [];
+
+
+    $http.get("/api/ingredients")
+      .success(function(response) {
+        $scope.dataIngredients = response;
+      });
 
     // $scope.gotoAnchor = function(x) {
     //   var newHash = 'anchor' + x;
@@ -27,14 +34,22 @@ angular.module('RDash')
     }
 
     $scope.redirect=function(id){
-
     //  $location.search('drinkId', id);
       $location.path("/drinkView").search({drinkId: id});
     };
 
     $scope.filterFunction = function(element){
-      console.log(element);
       //return element.name.match(/^$scope.search/) ? true : false;
+
+      if($scope.ingredients.length>0){
+        //console.log($scope.ingredients);
+        for(var i in element._amounts){
+          if($scope.ingredients.indexOf(i.ingredientID)===-1){
+            console.log(i.ingredientID);
+            return false;
+          }
+        }
+      }
       if($scope.search.length<=0){
         return true;
       }
@@ -43,6 +58,10 @@ angular.module('RDash')
       }else{
         return false;
       }
+    };
+
+    $scope.addIng = function(id){
+      $scope.ingredients.push(id);
     };
 
     $scope.unexpand=function() {
