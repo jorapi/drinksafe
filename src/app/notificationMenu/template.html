@@ -1,0 +1,13 @@
+<li ng-if="isUserLoggedIn == false" class="dropdown-header">
+  Log in to get notifications!
+</li>
+<li ng-if="isUserLoggedIn == true" class="dropdown-header">
+  Notifications
+</li>
+<li class="divider"></li>
+<li class="dropdown-item" ng-if="notifications.length == 0">
+  No notifications
+</li>
+<li class="dropdown-item" ng-repeat="not in notifications">
+  <a href="/#/userCabinet">{{not}}</a>
+</li>
