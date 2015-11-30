@@ -125,6 +125,7 @@ angular.module('RDash')
               if(amount.ingredientID == amountYouHave.ingredientID){ //if same ingredient
                 if(amount.amount <= amountYouHave.amount){ // if user has enough
                   amountYouHave.amount -= amount.amount;  //remove amount from user.amounts
+                  amountYouHave.amount = amountYouHave.amount.toFixed(2);
                   removed = true;
                 }else{
                   $scope.status = "You dont have enough ingredients " + amount.ingredientID;
@@ -138,6 +139,7 @@ angular.module('RDash')
             }
           });
           if($scope.removedAll){
+            $scope.status = "Ingredients removed.";
             $http.put("/api/users/me", $scope.me);
             console.log($scope.me);
           }

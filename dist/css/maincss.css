@@ -14,6 +14,9 @@
 .angucomplete-dropdown {
     width: 60%;
 }
+.angucomplete-holder {
+  position: inherit;
+}
 
 
 .drinkDisplay .textName{
