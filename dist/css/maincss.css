@@ -160,12 +160,18 @@ overflow: auto;
   height: 0px;
 }
 
-
+.drinkSearch .ingSearch{
+  max-width:90%;
+  width:90%;
+  margin:auto;
+}
 
 .dropdown-item {
   padding-left: 7px;
   padding-right: 7px;
 }
+
+
 
 
 

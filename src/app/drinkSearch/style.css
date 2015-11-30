@@ -93,3 +93,9 @@ overflow: auto;
   opacity: 0;
   height: 0px;
 }
+
+.drinkSearch .ingSearch{
+  max-width:90%;
+  width:90%;
+  margin:auto;
+}

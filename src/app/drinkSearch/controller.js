@@ -43,9 +43,10 @@ angular.module('RDash')
 
       if($scope.ingredients.length>0){
         //console.log($scope.ingredients);
-        for(var i in element._amounts){
-          if($scope.ingredients.indexOf(i.ingredientID)===-1){
-            console.log(i.ingredientID);
+        for(var i = 0; i < element._amounts.length; ++i){
+          if($scope.ingredients.indexOf(element._amounts[i].ingredientID)===-1){
+            console.log(i);
+            console.log(element._amounts[i].ingredientID);
             return false;
           }
         }
