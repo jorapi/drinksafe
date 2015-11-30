@@ -2,8 +2,9 @@
   <div class="row top">
     <div class="col-sm-4 col-md-4 col-lg-4 row">
       <img alt="Image not found" class="col-sm-12 col-md-12 col-lg-12 " class="img-responsive" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" src="{{dataDrink.photo}}" style="max-width:320px"><br><br>
-    </div>
 
+    </div>
+    <div class="fb-like" data-href="#" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     <div class="container-fluid col-sm-8 col-md-8 col-lg-8 row">
       <div class="col-sm-12 col-md-12 col-lg-12 ">
         <i class="col-lg-offset-11" ng-class="{false:'fa fa-heart-o fa-2x', true:'fa fa-heart fa-2x'}[favorited]" ng-click="favorite()" ng-hide="hideHeart"></i>
@@ -43,6 +44,7 @@
 <div class="drinkMe">
   <button class="btn-lg" ng-click="drinkIt()"> Drink It! </button>
 </div>
+
 <div class="steps">
 <label class="col-sm-12 col-md-12 col-lg-12" >Directions:</label><br>
 <ul class="list-group col-sm-12 col-md-12 col-lg-12 row ">
