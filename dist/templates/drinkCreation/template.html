@@ -41,8 +41,11 @@
             </div>
             <div class="ingAmount col-sm-5 col-md-5 col-lg-5 btn-group">
               <input class="form-control btn btn-default" max="99" min="0" name="amount" ng-model="ing.amount" required step=".01" style="max-width:60%" type="number">
-              <p class="btn btn-primary">
+              <p class="btn btn-primary" ng-if="ing.isLiquid == true || ing.isLiquid == null">
                 oz
+              </p>
+              <p class="btn btn-primary" ng-if="ing.isLiquid == false">
+                units
               </p>
             </div>
             <div class="ingRemove col-sm-2 col-md-2 col-lg-2">
@@ -77,13 +80,17 @@
 
         <div class="ingredientAdd col-sm-12 col-md-12 col-lg-12 row well well-sm" ng-show="adding">
           <h3 style="text-align:center">Ingredient Creation</h3>
-          <div class="col-sm-6 col-md-6 col-lg-6 form-group" ng-class="{'has-error': !validText }">
+          <div class="col-sm-5 col-md-5 col-lg-5 form-group" ng-class="{'has-error': !validText }">
             <label for="igText">Name:</label><br>
             <input class="form-control " id="igText" maxlength="20" minlength="3" name="igText" ng-model="add.text" placeholder="e.g. Bacardi, Absolute" style="max-width:100%;" type="text">
           </div>
-          <div class="col-sm-6 col-md-6 col-lg-6 form-group" ng-class="{'has-error': !validType }">
+          <div class="col-sm-5 col-md-5 col-lg-5 form-group" ng-class="{'has-error': !validType }">
             <label for="igType">Type:</label><br>
             <input class="form-control " id="igType" maxlength="20" minlength="3" name="igType" ng-model="add.type" placeholder="e.g. Rum, Vodka" style="max-width:100%;" type="text">
+          </div>
+          <div class="col-sm-2 col-md-2 col-lg-2 form-group">
+            <label for="igLiq">Liquid:</label><br>
+            <input class="form-control " id="igLiq" name="igLiq" ng-model="add.liq" style="max-height:90%;bottom:5px;" type="checkbox">
           </div>
           <div class=" col-sm-12 col-md-12 col-lg-12" role="group">
             <button class="btn btn-success" ng-click="addIngredient();" style="float:left " type="button">Save</button>

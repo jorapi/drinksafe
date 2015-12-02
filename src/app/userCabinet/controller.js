@@ -24,14 +24,14 @@ angular.module('RDash')
           $scope.me = response;
           for (i = 0; i < $scope.me._amounts.length; ++i) {
             $scope.currentibecauseangularisdumb = i;
-            $http.get("/api/ingredients/" + $scope.me._amounts[i].ingredientID) //todo: replace with current ingredientid
+            $http.get("/api/ingredients/" + $scope.me._amounts[i].ingredientID)
               .success(function(response) {
                 $scope.currIng = response;
                 $scope.ingredients.push({
                   "text": $scope.currIng.text,
                   "type": $scope.currIng.type,
+                  "isLiquid": $scope.currIng.isLiquid,
                   "amount": $scope.me._amounts[$scope.currentibecauseangularisdumb].amount,
-                  "unit": $scope.me._amounts[$scope.currentibecauseangularisdumb].unit,
                   "id": $scope.currIng.id
                 });
                 for(j = 0; j < $scope.dataIngredients.length; ++j){
@@ -50,7 +50,6 @@ angular.module('RDash')
         $scope.me._amounts.push({
           "ingredientID": ing.id,
           "amount": ing.amount,
-          "unit": "oz",
           "id": $scope.me._amounts.length + 1
         });
         $http.put("/api/users/me", $scope.me);

@@ -18,6 +18,10 @@
       "generated": true,
       "index": true
     },
+    "isLiquid": {
+      "type": "boolean",
+      "generated": true
+    },
     "text": {
       "type": "string",
       "required": true,

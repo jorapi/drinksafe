@@ -9,7 +9,6 @@ angular.module('RDash')
           $scope.hideUserMenu = false;
         }
       });
-
     $scope.currentUserId = -1;
     $http.get("/api/users/me/")
       .success(function(response) {
@@ -32,7 +31,8 @@ angular.module('RDash')
     };
     $scope.add = {
       "text": "",
-      "type": ""
+      "type": "",
+      "liq": true
     };
     $scope.directionStep;
     $scope.newIngredient = [];
@@ -120,7 +120,8 @@ angular.module('RDash')
     $scope.addIngredient = function() {
       var hold = {
         "text": $scope.add.text,
-        "type": $scope.add.type
+        "type": $scope.add.type,
+        "isLiquid": $scope.add.liq
       }
       if (hold.text.length >= 3 && hold.type.length >= 3) {
         $scope.add.text = "";
