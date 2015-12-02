@@ -4,7 +4,7 @@
       <img alt="Image not found" class="col-sm-12 col-md-12 col-lg-12 " class="img-responsive" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" src="{{dataDrink.photo}}" style="max-width:320px"><br><br>
 
     </div>
-    <div class="fb-like" data-href="#" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
     <div class="container-fluid col-sm-8 col-md-8 col-lg-8 row">
       <div class="col-sm-12 col-md-12 col-lg-12 ">
         <i class="col-lg-offset-11" ng-class="{false:'fa fa-heart-o fa-2x', true:'fa fa-heart fa-2x'}[favorited]" ng-click="favorite()" ng-hide="hideHeart"></i>
@@ -69,5 +69,12 @@
     <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 3.25, 'fa fa-star fa-2x':rate>3.75, 'fa fa-star-half-o fa-2x':rate>3.25 && rate<=3.75}"  ng-mouseover="mouse(4)" ng-click="rateClick(4)" ng-disabled="hasRated"></i>
     <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 4.25, 'fa fa-star fa-2x':rate>4.75, 'fa fa-star-half-o fa-2x':rate>4.25 && rate<=4.75}"  ng-mouseover="mouse(5)" ng-click="rateClick(5)" ng-disabled="hasRated"></i>
 </div>
+<div class="col-sm-3 col-md-3 col-lg-3">
+<a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="#" data-via="DrinkSafeuwm">Tweet</a>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <div class="fb-like" data-href="#" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 </div>
+</div>
+
 </div>
