@@ -39,14 +39,13 @@ angular.module('RDash')
     };
 
     $scope.filterFunction = function(element){
-      //return element.name.match(/^$scope.search/) ? true : false;
-
       if($scope.ingredients.length>0){
-        //console.log($scope.ingredients);
+        var hold=[];
         for(var i = 0; i < element._amounts.length; ++i){
-          if($scope.ingredients.indexOf(element._amounts[i].ingredientID)===-1){
-            console.log(i);
-            console.log(element._amounts[i].ingredientID);
+          hold.push(element._amounts[i].ingredientID);
+        }
+        for(var i = 0; i < $scope.ingredients.length; ++i){
+          if(hold.indexOf($scope.ingredients[i])===-1){
             return false;
           }
         }
@@ -54,7 +53,7 @@ angular.module('RDash')
       if($scope.search.length<=0){
         return true;
       }
-      if (element.name.toLowerCase().indexOf($scope.search.toLowerCase()) > -1){
+      if (element.name.toLowerCase().indexOf($scope.search.toLowerCase()) > -1 || element.description.toLowerCase().indexOf($scope.search.toLowerCase()) > -1){
         return true;
       }else{
         return false;
