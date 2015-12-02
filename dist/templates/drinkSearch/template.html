@@ -37,6 +37,24 @@
         <h3>Advanced Search</h3>
       </div>
       <br>
+
+
+
+      <ul class="panel-body">
+        <li class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row" ng-repeat="ingre in ingredients" style="list-style-type: none;">
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            {{ingre.text}}
+          </div>
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            {{ingre.type}}
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <a class="btn btn-danger" ng-click="removeIng(ingre)">Remove</a>
+          </div>
+        </li>
+      </ul>
+
+
       <input class="form-control panel-heading ingSearch" ng-model="ingSearch" placeholder="Search For Ingredients" type="search"><br>
       <ul class="panel-body">
         <li class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row" ng-repeat="ingre in dataIngredients | filter:ingSearch | orderBy:text | limitTo:10" style="list-style-type: none;">
@@ -47,7 +65,7 @@
             {{ingre.type}}
           </div>
           <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <a class="btn btn-success" ng-click="addIng(ingre.id)">Add</a>
+            <a class="btn btn-success" ng-click="addIng(ingre)">Add</a>
           </div>
         </li>
       </ul>
