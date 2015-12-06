@@ -121,6 +121,9 @@ angular.module('RDash')
     if($location.search().id != null){
       $http.get("/api/drinks/" + $location.search().id)
         .success(function(response) {
+          if (response.userId != $scope.currentUserId){
+              $scope.hideUserMenu = true; //user not authorized to edit
+          }
           $scope.drink = response;
           $scope.currentImage = response.photo;
           $scope.directions = [];
@@ -141,9 +144,6 @@ angular.module('RDash')
             $scope.ingredients[i].amount = response._amounts[i].amount;
           }
         });
-      if ($scope.currentUserId != $scope.drink.userId){
-        $scope.hideUserMenu = true;
-      }
     }
 
     $scope.addIngredient = function() {
