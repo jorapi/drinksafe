@@ -1,5 +1,5 @@
 angular.module('RDash')
-  .controller('drinkCreationController', function($scope, $http) {
+  .controller('drinkCreationController', function($scope, $http, $location) {
     //check if user is logged in
     $scope.hideUserMenu = false;
     $http.get("/auth/user")
@@ -116,6 +116,35 @@ angular.module('RDash')
     $scope.onSuccess = function(response) {
       $scope.currentImage = response.data.result.url;
     };
+
+    // Do this stuff for editing
+    if($location.search().id != null){
+      $http.get("/api/drinks/" + $location.search().id)
+        .success(function(response) {
+          $scope.drink = response;
+          $scope.currentImage = response.photo;
+          $scope.directions = [];
+          for (i = 0; i < response.instructions.length; i++){
+            var hold = {
+              "step": i + 1,
+              "text": response.instructions[i]
+            };
+            $scope.directions.push(hold);
+            $scope.directionStep = "";
+          }
+          for (i = 0; i < response._amounts.length; i++){
+            for(j = 0; j < $scope.dataIngredients.length; j++){
+              if($scope.dataIngredients[j].id == response._amounts[i].ingredientID){
+                $scope.addIng($scope.dataIngredients[j]);
+              }
+            }
+            $scope.ingredients[i].amount = response._amounts[i].amount;
+          }
+        });
+      if ($scope.currentUserId != $scope.drink.userId){
+        $scope.hideUserMenu = true;
+      }
+    }
 
     $scope.addIngredient = function() {
       var hold = {
