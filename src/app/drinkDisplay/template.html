@@ -20,21 +20,26 @@
   <div class="bottom">
     <div class="panel panel-primary col-sm-12 col-md-6 col-lg-6 ingredients row "></br>
     <div class="panel-heading col-sm-12 col-lg-12 col-md-12">
-
-      <span>Ingredients:</span>
+      <label class="col-sm-3 col-md-3 col-lg-3" for="dcIngredients">Ingredients:</label>
+      <label class="col-sm-3 col-md-3 col-lg-3 " for="dcIngredients">Type:</label>
+      <label class="col-sm-3 col-md-3 col-lg-3" for="dcIngredients">Amount:</label>
+      <label class="col-sm-3 col-md-3 col-lg-3 " for="dcIngredients">You Have:</label>
     </div>
   </br>
-  <ul class=" row panel-body list-group">
-</br>
+  <ul class="row panel-body list-group" id="dcIngredents">
+    </br>
     <li class="row list-group-item col-sm-12 col-md-12 col-lg-12 lineLeft" ng-repeat="ing in dataIngredient" style="list-style-type: none;">
-      <span class="col-sm-4 col-md-4 col-lg-4 inWords" style="word-wrap: break-word">
+      <span class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
         {{ing.text}}
       </span>
-      <span class="col-sm-4 col-md-4 col-lg-4 inWords" style="word-wrap: break-word">
+      <span class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
         {{ing.type}}
       </span>
-      <span class="col-sm-4 col-md-4 col-lg-4 inWords" style="word-wrap: break-word">
+      <span class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
         {{ing.amount.amount}}{{ing.amount.unit}}
+      </span>
+      <span ng-show="currentUser" class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
+        {{ing.amountUserHas}}{{ing.amount.unit}}
       </span>
       <br>
     </li>

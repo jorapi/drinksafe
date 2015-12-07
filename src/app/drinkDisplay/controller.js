@@ -55,6 +55,17 @@ angular.module('RDash')
               }
             }
           }
+          //Adding the ammounts the users has to the ingredentslist
+          if($scope.currentUser){
+            $scope.hasAllNeedIng = true;
+            angular.forEach($scope.dataIngredient, function (ingInDrink){
+              angular.forEach($scope.currentUser._amounts , function(userAmount){
+                if (ingInDrink.id === userAmount.ingredientID){
+                  ingInDrink.amountUserHas = userAmount.amount;
+                }
+              });
+            });
+          }
         });
 
     };
@@ -110,41 +121,41 @@ angular.module('RDash')
       }
     };
     $scope.drinkIt = function(){
-      if(!$scope.currentUser){
-        $scope.status = "You must be logged in to drink something";
-        return;
-      }
-      $http.get("/api/users/me/")
-        .success(function(response) {
-          $scope.me = response;
-          angular.forEach($scope.dataDrink._amounts, function(amount){
-            var removed = false;
-            $scope.removedAll = true;
+        if(!$scope.currentUser){
+          $scope.status = "You must be logged in to drink something";
+          return;
+        }
+        angular.forEach($scope.dataDrink._amounts, function(amount){
+          var removed = false;
+          $scope.removedAll = true;
 
-            angular.forEach($scope.me._amounts, function(amountYouHave){
-              if(amount.ingredientID == amountYouHave.ingredientID){ //if same ingredient
-                if(amount.amount <= amountYouHave.amount){ // if user has enough
-                  amountYouHave.amount -= amount.amount;  //remove amount from user.amounts
-                  amountYouHave.amount = amountYouHave.amount.toFixed(2);
-                  removed = true;
-                }else{
-                  $scope.status = "You dont have enough ingredients " + amount.ingredientID;
-                  $scope.removedAll = false;
-                }
+          angular.forEach($scope.currentUser._amounts, function(amountYouHave){
+            if(amount.ingredientID == amountYouHave.ingredientID){ //if same ingredient
+              if(amount.amount <= amountYouHave.amount){ // if user has enough
+                amountYouHave.amount -= amount.amount;  //remove amount from user.amounts
+                amountYouHave.amount = amountYouHave.amount.toFixed(2);
+                amount.amountUserHas = amountYouHave.amount;
+                removed = true;
+              }else{
+                $scope.status = "You dont have enough ingredients " + amount.ingredientID;
+                $scope.removedAll = false;
               }
-            });
-            if(!removed){
-              $scope.status = "you have no ingredient " + amount.ingredientID;
-              $scope.removedAll = false;
             }
           });
-          if($scope.removedAll){
-            $scope.status = "Ingredients removed.";
-            $http.put("/api/users/me", $scope.me);
-            console.log($scope.me);
+          if(!removed){
+            $scope.status = "you have no ingredient " + amount.ingredientID;
+            $scope.removedAll = false;
           }
-      });
+        });
+        if($scope.removedAll){
+          $scope.status = "Ingredients removed.";
+          $http.put("/api/users/me", $scope.currentUser);
+          console.log($scope.currentUser);
+        }
 
-    };
+
+      };
+
+
 
   });
