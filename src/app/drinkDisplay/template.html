@@ -47,7 +47,7 @@
 
 </div>
 <div class="drinkMe">
-  <button class="btn-lg" ng-click="drinkIt()"> Drink It! </button>
+  <button class="btn btn-lg" ng-disabled="!haveAllIng" ng-attr-class="{{ haveAllIng ? 'btn-default' : 'btn-warning' }}" ng-click="drinkIt()"> Drink It! </button>
 </div>
 <p> {{status}} </p>
 

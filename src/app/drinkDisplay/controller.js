@@ -9,6 +9,7 @@ angular.module('RDash')
     $scope.userRate = 0;
     $scope.pastRate = 0;
     $scope.enter = false;
+    $scope.haveAllIng = false;  //Logic for showing the Drinkitbutton
     $http.get("/auth/user")
       .success(function(response) {
         $scope.currentUser = response;
@@ -56,14 +57,21 @@ angular.module('RDash')
             }
           }
           //Adding the ammounts the users has to the ingredentslist
+
           if($scope.currentUser){
-            $scope.hasAllNeedIng = true;
+            $scope.haveAllIng = true;
             angular.forEach($scope.dataIngredient, function (ingInDrink){
+              var removed = false;
               angular.forEach($scope.currentUser._amounts , function(userAmount){
                 if (ingInDrink.id === userAmount.ingredientID){
                   ingInDrink.amountUserHas = userAmount.amount;
+                  removed = true;
                 }
               });
+              if (!removed){
+                ingInDrink.amountUserHas = "--";
+                $scope.haveAllIng = false;
+              }
             });
           }
         });
