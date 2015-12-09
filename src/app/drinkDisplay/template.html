@@ -26,7 +26,7 @@
       <label class="col-sm-3 col-md-3 col-lg-3" for="dcIngredients">Ingredients:</label>
       <label class="col-sm-3 col-md-3 col-lg-3 " for="dcIngredients">Type:</label>
       <label class="col-sm-3 col-md-3 col-lg-3" for="dcIngredients">Amount:</label>
-      <label class="col-sm-3 col-md-3 col-lg-3 " for="dcIngredients">You Have:</label>
+      <label ng-show="currentUser" class="col-sm-3 col-md-3 col-lg-3 " for="dcIngredients">You Have:</label>
     </div>
   </br>
   <ul class="row panel-body list-group" id="dcIngredents">
@@ -41,8 +41,10 @@
       <span class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
         {{ing.amount.amount}}{{ing.amount.unit}}
       </span>
-      <span ng-show="currentUser" class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
-        {{ing.amountUserHas}}{{ing.amount.unit}}
+      <span ng-show="currentUser"
+            ng-class="{'text-warning' : ing.amount.amountUserHas < ing.amount.amount , 'text-error': ing.amount.amountUserHas === '--' }" 
+            class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
+        {{ing.amount.amountUserHas}}{{ing.amount.unit}}
       </span>
       <br>
     </li>
@@ -50,7 +52,7 @@
 
 </div>
 <div class="drinkMe">
-  <button class="btn btn-lg" ng-disabled="!haveAllIng" ng-attr-class="{{ haveAllIng ? 'btn-default' : 'btn-warning' }}" ng-click="drinkIt()"> Drink It! </button>
+  <button class="" ng-disabled="!haveAllIng" ng-attr-class="{{ haveAllIng ? 'btn-default btn btn-lg' : 'btn-warning btn btn-lg' }}" ng-click="drinkIt()"> Drink It! </button>
 </div>
 <p> {{status}} </p>
 
