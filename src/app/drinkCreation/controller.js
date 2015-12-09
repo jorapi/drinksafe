@@ -121,7 +121,6 @@ angular.module('RDash')
           if (response.userId == $scope.currentUserId){
             $scope.hideUserMenu = false;
             $scope.drink.userId = $scope.currentUserId;
-            window.alert("YOU MADE THIS!");
           } else {
             $scope.hideUserMenu = true; // you didn't make this drink, you can't edit it, fool
           }
