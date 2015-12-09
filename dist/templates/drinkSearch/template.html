@@ -37,11 +37,13 @@
         <h3>Advanced Search</h3>
       </div>
       <br>
-
-
-
-      <ul class="panel-body">
-        <li class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row" ng-repeat="ingre in ingredients" style="list-style-type: none;">
+<div >
+  <h4>Filter by your cabinet
+<input type="button" class="btn inventoryBtn" ng-class="myBtn" value="{{btnValue}}" ng-click="buttonPress()" ng-show="loggedIn">
+<h4>
+</div>
+      <ul class="panel-body drinkList">
+        <li class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row drinkItem fade"  ng-repeat="ingre in ingredients" style="list-style-type: none;">
           <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
             {{ingre.text}}
           </div>
