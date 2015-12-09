@@ -27,7 +27,9 @@
             <div class="col-sm-10 col-md-10 col-lg-10">
               <a href="/#/drinkView?drinkId={{drink.id}}" style="text-decoration: none !important">{{drink.name}}</a>
             </div>
-            <i ng-click="unFavorite(drink.id)" class="col-sm-2 col-md-2 col-lg-2 fa fa-times fa-2x"></i>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+              <a href="http://localhost:3000/#/userFavorites" ng-click="unFavorite(drink.id)" style="text-decoration: none !important"><i class="fa fa-times"></i></a>
+            </div>
           </li>
         </ul>
       </rd-widget-body>
