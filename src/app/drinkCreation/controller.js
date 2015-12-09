@@ -1,19 +1,11 @@
 angular.module('RDash')
   .controller('drinkCreationController', function($scope, $http, $location) {
     //check if user is logged in
-    $scope.hideUserMenu = false;
-    $http.get("/auth/user")
-      .success(function(response) {
-        $scope.userJSON = response;
-        if (response.profiles != null && response.profiles.length > 0) {
-          $scope.hideUserMenu = false;
-        }
-      });
+    $scope.hideUserMenu = true;
     $scope.currentUserId = -1;
     $http.get("/api/users/me/")
       .success(function(response) {
         $scope.currentUserId = response.id;
-        $scope.drink.userId = response.id;
       });
     $scope.currentImage = "img/red-solo-cup.jpg";
     $scope.drink = {
@@ -126,6 +118,13 @@ angular.module('RDash')
               $scope.hideUserMenu = true; //user not authorized to edit
           }
           $scope.drink = response;
+          if (response.userId == $scope.currentUserId){
+            $scope.hideUserMenu = false;
+            $scope.drink.userId = $scope.currentUserId;
+            window.alert("YOU MADE THIS!");
+          } else {
+            $scope.hideUserMenu = true; // you didn't make this drink, you can't edit it, fool
+          }
           $scope.currentImage = response.photo;
           $scope.directions = [];
           for (i = 0; i < response.instructions.length; i++){
@@ -143,6 +142,14 @@ angular.module('RDash')
               }
             }
             $scope.ingredients[i].amount = response._amounts[i].amount;
+          }
+        });
+    } else { // not editing
+      $http.get("/auth/user")
+        .success(function(response) {
+          $scope.userJSON = response;
+          if (response.profiles != null && response.profiles.length > 0) {
+            $scope.hideUserMenu = false;
           }
         });
     }
