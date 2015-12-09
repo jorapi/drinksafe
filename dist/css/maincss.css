@@ -166,7 +166,22 @@ overflow: auto;
   margin:auto;
 }
 
+.badge {
+    font-size: .65em;
 
+    display: block;
+    position: absolute;
+    top: 2em;
+    left: 2.5em;
+    width: 1.75em;
+    height: 1.75em;
+    line-height: 1.55em;
+    border-radius: 50%;
+    text-align: left;
+
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+}
 
 .dropdown-item {
   padding-left: 7px;

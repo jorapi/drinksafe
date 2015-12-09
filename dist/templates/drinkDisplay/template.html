@@ -1,4 +1,7 @@
 <div class="drinkDisplay">
+<div ng-hide="true">
+  <img ng-src="{{dataDrink.photo}}"></img> </div>
+
   <div class="row top">
     <div class="col-sm-4 col-md-4 col-lg-4 row">
       <img alt="Image not found" class="col-sm-12 col-md-12 col-lg-12 " class="img-responsive" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" src="{{dataDrink.photo}}" style="max-width:320px"><br><br>
@@ -82,7 +85,7 @@
   <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="DrinkSafeuwm" data-size="large">Tweet</a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 -->
-    <div class="fb-like" data-href="#" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    <div class="fb-like" data-href="" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 </div>
 
 </div>
