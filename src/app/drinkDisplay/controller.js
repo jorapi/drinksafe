@@ -64,12 +64,15 @@ angular.module('RDash')
               var removed = false;
               angular.forEach($scope.currentUser._amounts , function(userAmount){
                 if (ingInDrink.id === userAmount.ingredientID){
-                  ingInDrink.amountUserHas = userAmount.amount;
+                  ingInDrink.amount.amountUserHas = userAmount.amount;
                   removed = true;
+                  if(ingInDrink.amount.amountUserHas < ingInDrink.amount.amount){
+                    $scope.haveAllIng = false
+                  }
                 }
               });
               if (!removed){
-                ingInDrink.amountUserHas = "--";
+                ingInDrink.amount.amountUserHas = "--";
                 $scope.haveAllIng = false;
               }
             });
@@ -133,16 +136,16 @@ angular.module('RDash')
           $scope.status = "You must be logged in to drink something";
           return;
         }
-        angular.forEach($scope.dataDrink._amounts, function(amount){
+        angular.forEach($scope.dataIngredient, function(ing){
           var removed = false;
           $scope.removedAll = true;
 
           angular.forEach($scope.currentUser._amounts, function(amountYouHave){
-            if(amount.ingredientID == amountYouHave.ingredientID){ //if same ingredient
-              if(amount.amount <= amountYouHave.amount){ // if user has enough
-                amountYouHave.amount -= amount.amount;  //remove amount from user.amounts
+            if(ing.id == amountYouHave.ingredientID){ //if same ingredient
+              if(ing.amount.amount <= amountYouHave.amount){ // if user has enough
+                amountYouHave.amount -= ing.amount.amount;  //remove amount from user.amounts
                 amountYouHave.amount = amountYouHave.amount.toFixed(2);
-                amount.amountUserHas = amountYouHave.amount;
+                ing.amount.amountUserHas = amountYouHave.amount;
                 removed = true;
               }else{
                 $scope.status = "You dont have enough ingredients " + amount.ingredientID;
@@ -159,6 +162,7 @@ angular.module('RDash')
           $scope.status = "Ingredients removed.";
           $http.put("/api/users/me", $scope.currentUser);
           console.log($scope.currentUser);
+          console.log($scope.dataIngredients);
         }
 
 
