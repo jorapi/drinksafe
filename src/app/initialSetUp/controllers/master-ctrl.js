@@ -27,17 +27,6 @@ function MasterCtrl($scope, $cookieStore, $http) {
         return window.innerWidth;
     };
 
-    $scope.dataRec=[];
-    $http.get("/api/drinks")
-      .success(function(response){
-        $scope.dat = response;
-        if($scope.dat == null)return;
-        for(i = $scope.dat.length; i> 0; i++){
-          if($scope.dataRec.length < 5)
-          $scope.dataRec.push($scope.dat[i]);
-        }
-      });
-
     $scope.$watch($scope.getWidth, function(newValue, oldValue) {
         if (newValue >= mobileView) {
             if (angular.isDefined($cookieStore.get('toggle'))) {
