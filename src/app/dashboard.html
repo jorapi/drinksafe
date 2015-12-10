@@ -68,39 +68,22 @@
 					</div>
 				</div>
 			</rd-widget-body>
-		</rd-widget>
-	</div>
-	<div class="col-lg-3 ">
-		<script>
-			function rec_added($scope, $http){
-				$scope.dataRec=[];
-		    $http.get("/api/drinks")
-		      .success(function(response){
-		        $scope.dat = response;
-		        if($scope.dat == null)return;
-		        for(i = $scope.dat.length; i> 0; i++){
-							if($scope.dataRec.length < 5)
-		          $scope.dataRec.push($scope.dat[i]);
-		        }
-		      });
-			}
-		</script>
-    <rd-widget  >
-      <rd-widget-header icon="fa fa-calendar" title="Recently Added Drinks">
-      </rd-widget-header>
-      <rd-widget-body>
-        <h4 style="text-align:center" ng-hide="dataRec.length > 0"> No drinks have been added yet!</h4>
-        <ul class="list-group">
-          <li class="row" ng-repeat="drink in dataRec" style="list-style-type:none;">
-            <div class="col-sm-10 col-md-10 col-lg-10">
-              <a href="/#/drinkView?drinkId={{drink.id}}" style="text-decoration: none !important">{{drink.name}}</a>
-            </div>
-          </li>
-        </ul>
-      </rd-widget-body>
-		</rd-widget>
-	</div>
 
+				<rd-widget-header icon="fa fa-calendar" title="Recently Added Drinks">
+				</rd-widget-header>
+				<rd-widget-body>
+					<h4 style="text-align:center" ng-hide="dataRec.length > 0"> No drinks have been added yet!</h4>
+					<ul class="list-group">
+						<li class="row" ng-repeat="drink in dataRec" style="list-style-type:none;">
+							<div class="col-sm-10 col-md-10 col-lg-10">
+								<a href="/#/drinkView?drinkId={{drink.id}}" style="text-decoration: none !important">{{drink.name}}</a>
+							</div>
+						</li>
+					</ul>
+				</rd-widget-body>
+
+		</rd-widget>
+	</div>
 
 	<div class="col-sm-3 col-md-3 col-lg-3">
 		<rd-widget>
