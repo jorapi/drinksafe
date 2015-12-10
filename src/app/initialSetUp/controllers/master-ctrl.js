@@ -23,17 +23,6 @@ function MasterCtrl($scope, $cookieStore, $http) {
         }
       });
 
-      $scope.dataRec=[];
-      $http.get("/api/drinks")
-        .success(function(response){
-          $scope.dat = response;
-          if($scope.dat == null)return;
-          for(i = 0; i< 10; i++){
-            $scope.dataRec.push($scope.dat[i]);
-          }
-        });
-
-
     $scope.getWidth = function() {
         return window.innerWidth;
     };
