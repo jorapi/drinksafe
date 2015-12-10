@@ -53,7 +53,7 @@ angular.module('RDash')
           "id": i
         });
       });
-
+      $scope.drink.userId = $scope.currentUserId;
       $scope.drink.photo = $scope.currentImage;
       $scope.drink.instructions = holdDirections;
       console.log($scope.drink);
@@ -148,6 +148,7 @@ angular.module('RDash')
         .success(function(response) {
           $scope.userJSON = response;
           if (response.profiles != null && response.profiles.length > 0) {
+            $scope.currentUserId = response.id;
             $scope.hideUserMenu = false;
           }
         });
