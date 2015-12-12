@@ -4,14 +4,15 @@
     <div class="col-sm-12 col-md-12 col-lg-12 input-group panel-info bar row">
       <input class="form-control panel-heading " ng-click="limit=10;unexpand();" ng-model="search" placeholder="drinks search" type="search">
       <div class="dropdown input-group-btn">
-        <button class="btn btn-info " data-target="#searchModal" data-toggle="modal">
+        <button ng-hide="isTouch" class="btn btn-info " data-target="#searchModal" data-toggle="modal">
           More
         </button >
         <button aria-expanded="false" aria-haspopup="true" class="btn btn-info dropdown-toggle " data-toggle="dropdown" id="dropdownMenu1" type="button">
-          Order By
+
+          <span ng-hide="isTouch">Order By</span>
           <span class="caret"></span>
         </button>
-        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
+        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu pull-right">
           <li>
             <a ng-click="filter='name'">Name</a>
           </li>
@@ -20,6 +21,9 @@
           </li>
           <li>
             <a ng-click="filter='rating'">Lowest Rating</a>
+          </li>
+          <li ng-show="isTouch">
+            <a  data-target="#searchModal" data-toggle="modal">Advanced Search</a>
           </li>
         </ul>
       </div>
