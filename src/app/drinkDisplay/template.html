@@ -26,27 +26,27 @@
 
     <div class="panel panel-primary col-xs-12 ingredients row "></br>
     <div class="panel-heading col-xs-12 col-sm-12 col-lg-12 col-md-12">
-      <label class="col-xs-{{colVal}} padFix" for="dcIngredients">Ingredients:</label>
-      <label class="col-xs-{{colVal}} padFix" for="dcIngredients">Type:</label>
-      <label class="col-xs-{{colVal}} padFix" for="dcIngredients">Amount:</label>
-      <label ng-show="currentUser" class="col-xs-{{colVal}} padFix" for="dcIngredients">You Have:</label>
+      <label class="col-xs-3 padFix" for="dcIngredients">Ingredients:</label>
+      <label class="col-xs-3 padFix" for="dcIngredients">Type:</label>
+      <label class="col-xs-3 padFix" for="dcIngredients">Amount:</label>
+      <label ng-show="currentUser" class="col-xs-3 padFix" for="dcIngredients">You Have:</label>
     </div>
   </br>
   <ul class="row panel-body list-group textResize" id="dcIngredents">
     </br>
     <li class="row list-group-item col-xs-12 col-sm-12 col-md-12 col-lg-12 lineLeft" ng-repeat="ing in dataIngredient" style="list-style-type: none;">
-      <span class="col-xs-{{colVal}} inWords padFix" style="word-wrap: break-word">
+      <span class="col-xs-3 inWords padFix" style="word-wrap: break-word">
         {{ing.text}}
       </span>
-      <span class="col-xs-{{colVal}} inWords padFix" style="word-wrap: break-word">
+      <span class="col-xs-3 inWords padFix" style="word-wrap: break-word">
         {{ing.type}}
       </span>
-      <span class="col-xs-{{colVal}} inWords padFix" style="word-wrap: break-word">
+      <span class="col-xs-3 inWords padFix" style="word-wrap: break-word">
         {{ing.amount.amount}}{{ing.amount.unit}}
       </span>
       <span ng-show="currentUser"
             ng-class="{'text-warning' : ing.amount.amountUserHas < ing.amount.amount , 'text-error': ing.amount.amountUserHas === '--' }"
-            class="col-xs-{{colVal}} inWords padFix" style="word-wrap: break-word">
+            class="col-xs-3 inWords padFix" style="word-wrap: break-word">
         {{ing.amount.amountUserHas}}{{ing.amount.unit}}
       </span>
       <br>
