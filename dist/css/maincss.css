@@ -109,12 +109,15 @@
   opacity:0;
 }
 
-
-
-
-
+ .drinkSearch .ingAdd{
+   padding:0px !important;
+ }
+ .drinkSearch .bar{
+   padding:15px;
+ }
 
 .drinkSearch .inventoryBtn{
+
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -219,6 +222,11 @@ overflow: auto;
   margin:auto;
 }
 
+.dropdown-item {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
 .badge {
     font-size: .65em;
 
@@ -234,11 +242,6 @@ overflow: auto;
 
     color: #fff;
     background: rgba(0,0,0,0.5);
-}
-
-.dropdown-item {
-  padding-left: 7px;
-  padding-right: 7px;
 }
 
 

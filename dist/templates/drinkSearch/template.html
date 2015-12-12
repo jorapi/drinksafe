@@ -1,13 +1,13 @@
 <div class="row drinkSearch">
   <div class="ingAdd col-sm-12 col-md-12 col-lg-12 panel panel-info row">
     <br>
-    <div class="col-sm-12 col-md-12 col-lg-12 input-group panel-info">
+    <div class="col-sm-12 col-md-12 col-lg-12 input-group panel-info bar row">
       <input class="form-control panel-heading " ng-click="limit=10;unexpand();" ng-model="search" placeholder="drinks search" type="search">
       <div class="dropdown input-group-btn">
-        <button class="btn btn-info" data-target="#searchModal" data-toggle="modal">
+        <button class="btn btn-info " data-target="#searchModal" data-toggle="modal">
           More
         </button >
-        <button aria-expanded="false" aria-haspopup="true" class="btn btn-info dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button">
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-info dropdown-toggle " data-toggle="dropdown" id="dropdownMenu1" type="button">
           Order By
           <span class="caret"></span>
         </button>
@@ -78,7 +78,7 @@
     </div>
 
     <br>
-    <ul class="panel-body list-group searchList">
+    <ul class="panel-body list-group searchList myList" style="padding:0px !important;">
       <li class="list-group-item  row searchListItem" ng-repeat="drink in drinks | filter:filterFunction | orderBy:filter | limitTo:limit" style="list-style-type: none;">
         <div class="searchImg " id="" ng-class="{'col-sm-2 col-md-2 col-lg-2': !drink.expand, 'col-sm-4 col-md-4 col-lg-4': drink.expand }">
           <img alt="Image not found" class="img-responsive img-thumbnail" id="drinkImg" ng-click="drinkClick(drink)" ng-dblclick="redirect(drink.id)" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" src="{{drink.photo}}" style="max-width:100%; max-hight:200px"><br><br>

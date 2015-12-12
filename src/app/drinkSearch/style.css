@@ -43,12 +43,15 @@
   opacity:0;
 }
 
-
-
-
-
+ .drinkSearch .ingAdd{
+   padding:0px !important;
+ }
+ .drinkSearch .bar{
+   padding:15px;
+ }
 
 .drinkSearch .inventoryBtn{
+
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
