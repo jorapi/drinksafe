@@ -3,8 +3,8 @@
   <img ng-src="{{dataDrink.photo}}"></img> </div>
 
   <div class="row top">
-    <div class="col-sm-4 col-md-4 col-lg-4 row">
-      <img alt="Image not found" class="col-sm-12 col-md-12 col-lg-12 " class="img-responsive" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" src="{{dataDrink.photo}}" style="max-width:320px"><br><br>
+    <div class="col-sm-4 col-md-4 col-lg-4 ">
+      <img alt="Image not found" class="col-sm-12 col-md-12 col-lg-12 " class="img-responsive" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" src="{{dataDrink.photo}}" style="max-width:100%"><br><br>
 
     </div>
 
@@ -20,30 +20,33 @@
 
   </div>
 
-  <div class="bottom">
-    <div class="panel panel-primary col-sm-12 col-md-6 col-lg-6 ingredients row "></br>
-    <div class="panel-heading col-sm-12 col-lg-12 col-md-12">
-      <label class="col-sm-3 col-md-3 col-lg-3" for="dcIngredients">Ingredients:</label>
-      <label class="col-sm-3 col-md-3 col-lg-3 " for="dcIngredients">Type:</label>
-      <label class="col-sm-3 col-md-3 col-lg-3" for="dcIngredients">Amount:</label>
-      <label ng-show="currentUser" class="col-sm-3 col-md-3 col-lg-3 " for="dcIngredients">You Have:</label>
+  <div class="bottom textDes">
+
+
+
+    <div class="panel panel-primary col-xs-12 ingredients row "></br>
+    <div class="panel-heading col-xs-12 col-sm-12 col-lg-12 col-md-12">
+      <label class="col-xs-{{colVal}} padFix" for="dcIngredients">Ingredients:</label>
+      <label class="col-xs-{{colVal}} padFix" for="dcIngredients">Type:</label>
+      <label class="col-xs-{{colVal}} padFix" for="dcIngredients">Amount:</label>
+      <label ng-show="currentUser" class="col-xs-{{colVal}} padFix" for="dcIngredients">You Have:</label>
     </div>
   </br>
-  <ul class="row panel-body list-group" id="dcIngredents">
+  <ul class="row panel-body list-group textResize" id="dcIngredents">
     </br>
-    <li class="row list-group-item col-sm-12 col-md-12 col-lg-12 lineLeft" ng-repeat="ing in dataIngredient" style="list-style-type: none;">
-      <span class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
+    <li class="row list-group-item col-xs-12 col-sm-12 col-md-12 col-lg-12 lineLeft" ng-repeat="ing in dataIngredient" style="list-style-type: none;">
+      <span class="col-xs-{{colVal}} inWords padFix" style="word-wrap: break-word">
         {{ing.text}}
       </span>
-      <span class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
+      <span class="col-xs-{{colVal}} inWords padFix" style="word-wrap: break-word">
         {{ing.type}}
       </span>
-      <span class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
+      <span class="col-xs-{{colVal}} inWords padFix" style="word-wrap: break-word">
         {{ing.amount.amount}}{{ing.amount.unit}}
       </span>
       <span ng-show="currentUser"
-            ng-class="{'text-warning' : ing.amount.amountUserHas < ing.amount.amount , 'text-error': ing.amount.amountUserHas === '--' }" 
-            class="col-sm-3 col-md-3 col-lg-3 inWords" style="word-wrap: break-word">
+            ng-class="{'text-warning' : ing.amount.amountUserHas < ing.amount.amount , 'text-error': ing.amount.amountUserHas === '--' }"
+            class="col-xs-{{colVal}} inWords padFix" style="word-wrap: break-word">
         {{ing.amount.amountUserHas}}{{ing.amount.unit}}
       </span>
       <br>
@@ -51,7 +54,8 @@
   </ul>
 
 </div>
-<div class="drinkMe">
+
+<div class="drinkMe" ng-hide="hideHeart">
   <button class="" ng-disabled="!haveAllIng" ng-attr-class="{{ haveAllIng ? 'btn-default btn btn-lg' : 'btn-warning btn btn-lg' }}" ng-click="drinkIt()"> Drink It! </button>
 </div>
 <p> {{status}} </p>
@@ -60,10 +64,10 @@
 <label class="col-sm-12 col-md-12 col-lg-12" >Directions:</label><br>
 <ul class="list-group col-sm-12 col-md-12 col-lg-12 row ">
   <li class="row list-group-item" ng-repeat="ins in dataDrink.instructions track by $index" style="list-style-type: none;">
-    <div class="col-sm-1 col-md-1 col-lg-1">
+    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
       {{dataDrink.instructions.indexOf(ins)+1}}
     </div>
-    <span class="col-sm-11 col-md-11 col-lg-11" style="word-wrap: break-word">
+    <span class="col-xs-10 col-sm-11 col-md-11 col-lg-11" style="word-wrap: break-word">
       {{ins}}
     </span>
     <br>

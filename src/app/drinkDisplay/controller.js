@@ -40,7 +40,11 @@ angular.module('RDash')
         }
 
       }).then(getIngredients());
-
+      if($scope.hideHeart){
+        $scope.colVal = "4";
+      }else{
+        $scope.colVal = "3";
+      }
 
     function getIngredients() {
       $http.get("/api/drinks/" + $scope.urlData.drinkId + "/ingredients")

@@ -28,6 +28,10 @@
   margin-left:1vw;
 }
 
+.drinkDisplay .padFix{
+  padding-right:1vw !important;
+  padding-left:1vw !important;
+}
 
 .drinkDisplay .inWords{
   text-align:left;

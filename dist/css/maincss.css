@@ -1,3 +1,5 @@
+.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
+
 .angucomplete-dropdown {
     overflow-y: auto;
     max-height: 200px; // your preference
@@ -15,8 +17,6 @@
 .angucomplete-holder {
   position: inherit;
 }
-
-.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
 
 
 .drinkDisplay .textName{
@@ -49,6 +49,10 @@
   margin-left:1vw;
 }
 
+.drinkDisplay .padFix{
+  padding-right:1vw !important;
+  padding-left:1vw !important;
+}
 
 .drinkDisplay .inWords{
   text-align:left;
