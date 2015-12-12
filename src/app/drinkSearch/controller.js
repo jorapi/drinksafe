@@ -31,10 +31,28 @@ angular.module('RDash')
       .success(function(response) {
         $scope.dataIngredients = response;
       });
-
+      $scope.isTouch = is_touch_device();
     if ($location.search().search != null) {
       $scope.search = $location.search().search;
     }
+
+    function is_touch_device() {
+      try {
+        document.createEvent("TouchEvent");
+        return true;
+      } catch (e) {
+        return false;
+      }
+    };
+
+    $scope.drinkClick = function(drink){
+      if($scope.isTouch){
+        $scope.redirect(drink.id);
+      }else{
+        $scope.unexpand();
+        drink.expand=!drink.expand;
+      }
+    };
 
     $scope.buttonPress = function() {
       $scope.mySearch = !$scope.mySearch;
