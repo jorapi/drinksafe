@@ -130,6 +130,15 @@
    padding:15px;
  }
 
+.drinkSearch .listFix {
+  padding-left:0px !important;
+  padding-right:0px !important;
+}
+
+.drinkSearch .textFix *{
+  font-size:10px;
+}
+
 .drinkSearch .inventoryBtn{
 
   -webkit-transition: all 1s ease;
@@ -236,23 +245,6 @@ overflow: auto;
   margin:auto;
 }
 
-.badge {
-    font-size: .65em;
-
-    display: block;
-    position: absolute;
-    top: 2em;
-    left: 2.5em;
-    width: 1.75em;
-    height: 1.75em;
-    line-height: 1.55em;
-    border-radius: 50%;
-    text-align: left;
-
-    color: #fff;
-    background: rgba(0,0,0,0.5);
-}
-
 .navMobile{
   padding-left:0px !important;
 }
@@ -303,6 +295,23 @@ overflow: auto;
    position:relative;
 
  }
+
+.badge {
+    font-size: .65em;
+
+    display: block;
+    position: absolute;
+    top: 2em;
+    left: 2.5em;
+    width: 1.75em;
+    height: 1.75em;
+    line-height: 1.55em;
+    border-radius: 50%;
+    text-align: left;
+
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+}
 
 .dropdown-item {
   padding-left: 7px;

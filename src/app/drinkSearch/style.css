@@ -50,6 +50,15 @@
    padding:15px;
  }
 
+.drinkSearch .listFix {
+  padding-left:0px !important;
+  padding-right:0px !important;
+}
+
+.drinkSearch .textFix *{
+  font-size:10px;
+}
+
 .drinkSearch .inventoryBtn{
 
   -webkit-transition: all 1s ease;

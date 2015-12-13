@@ -1,5 +1,5 @@
 angular.module('RDash')
-  .controller('drinkSearchController', function($scope, $http, $anchorScroll, $location, $routeParams, $stateParams) {
+  .controller('drinkSearchController', function($scope, $http, $anchorScroll, $location, $routeParams, $stateParams, $window) {
 
     $http.get("api/drinks")
       .success(function(data) {
@@ -35,6 +35,19 @@ angular.module('RDash')
     if ($location.search().search != null) {
       $scope.search = $location.search().search;
     }
+    if($window.innerWidth <= 670){
+      $scope.isMobile=true;
+    }
+
+    $scope.$watch(function(){
+     return $window.innerWidth;
+  }, function(value) {
+    if(value <= 670){
+      $scope.isMobile=true;
+    }else{
+      $scope.isMobile=false;
+    }
+ });
 
     function is_touch_device() {
       try {
