@@ -1,3 +1,10 @@
-.drinkCreation .sizeFix{
-  
+
+.drinkCreation .ingList *{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+.drinkCreation .ingDirections{
+  padding-left:0 !important;
+  padding-right:0 !important;
 }
