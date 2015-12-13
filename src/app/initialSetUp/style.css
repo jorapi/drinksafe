@@ -38,10 +38,13 @@
    border-color:black;
    border-style: solid;
    border-radius: 5px;
+   left:4px;
  }
 
  #mobileSidebar .sidebar .sidebar-list a{
    border-width:1px;
    border-color:black;
    border-style: solid;
+   position:relative;
+
  }
