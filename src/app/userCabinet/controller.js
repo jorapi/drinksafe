@@ -1,5 +1,5 @@
 angular.module('RDash')
-  .controller('userCabinetController', function($scope, $http) {
+  .controller('userCabinetController', function($scope, $http, $window) {
     //check if user is logged in
     $scope.hideUserMenu = true;
     $http.get("/auth/user")
@@ -47,6 +47,20 @@ angular.module('RDash')
               });
           }
         });
+
+        if($window.innerWidth <= 540){
+        $scope.isMobile=true;
+      }
+
+      $scope.$watch(function(){
+       return $window.innerWidth;
+    }, function(value) {
+      if(value <= 540){
+        $scope.isMobile=true;
+      }else{
+        $scope.isMobile=false;
+      }
+   });
 
       $scope.addIng = function(item) {
         var index = $scope.dataIngredients.indexOf(item);
