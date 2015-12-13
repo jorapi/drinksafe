@@ -29,55 +29,6 @@
   padding-right:0 !important;
 }
 
-.drinkDisplay .textName{
-  max-height: 100%;
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 2vw;
-  border-bottom: solid #428bca;
-  border-width: 1px;
-  cursor:pointer;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-}
- .drinkDisplay .textDes{
-   max-height: 100%;
-   overflow: hidden;
-   font-size: 1.5vw;
-   word-wrap: break-word;
-   -webkit-transition: all 1s ease;
-   -moz-transition: all 1s ease;
-   -o-transition: all 1s ease;
-   -ms-transition: all 1s ease;
-   transition: all 1s ease;
- }
-
-.drinkDisplay .bottom{
-  margin-left:1vw;
-}
-
-.drinkDisplay .padFix{
-  padding-right:1vw !important;
-  padding-left:1vw !important;
-}
-
-.drinkDisplay .inWords{
-  text-align:left;
-}
-
-.drinkDisplay .fa-star-half-o{
-  color:rgb(214, 161, 2);
-}
-.drinkDisplay .fa-star{
-  color:rgb(214, 161, 2);
-}
-.drinkDisplay .entered .fa-star{
-  color:red;
-}
-
 .drinkSearch{
   padding:10px;
   display:block;
@@ -236,6 +187,55 @@ overflow: auto;
   margin:auto;
 }
 
+.drinkDisplay .textName{
+  max-height: 100%;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 2vw;
+  border-bottom: solid #428bca;
+  border-width: 1px;
+  cursor:pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+ .drinkDisplay .textDes{
+   max-height: 100%;
+   overflow: hidden;
+   font-size: 1.5vw;
+   word-wrap: break-word;
+   -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+   -o-transition: all 1s ease;
+   -ms-transition: all 1s ease;
+   transition: all 1s ease;
+ }
+
+.drinkDisplay .bottom{
+  margin-left:1vw;
+}
+
+.drinkDisplay .padFix{
+  padding-right:1vw !important;
+  padding-left:1vw !important;
+}
+
+.drinkDisplay .inWords{
+  text-align:left;
+}
+
+.drinkDisplay .fa-star-half-o{
+  color:rgb(214, 161, 2);
+}
+.drinkDisplay .fa-star{
+  color:rgb(214, 161, 2);
+}
+.drinkDisplay .entered .fa-star{
+  color:red;
+}
+
 .navMobile{
   padding-left:0px !important;
 }
@@ -253,6 +253,9 @@ overflow: auto;
    height:40px;
    width:40px;
    display:block;
+   position:relative;
+   left:2px;
+   top:2px;
  }
 
  .mobile-btn span{
@@ -266,7 +269,7 @@ overflow: auto;
 
  #mobileSidebar .sidebar{
    position:relative;
-   top:2px;
+   top:4px;
    background-color: #30426a;
    opacity: 0.9;
    border-width:1px;
