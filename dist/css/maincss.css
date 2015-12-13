@@ -59,6 +59,11 @@
   margin-left:1vw;
 }
 
+.drinkDisplay .social{
+  max-width:100%;
+  overflow: hidden;
+}
+
 .drinkDisplay .padFix{
   padding-right:1vw !important;
   padding-left:1vw !important;

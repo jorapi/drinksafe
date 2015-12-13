@@ -55,7 +55,7 @@
 
 </div>
 
-<div class="drinkMe" >
+<div class="drinkMe" ng-hide="hideHeart">
   <button style="font-size:2vw;" ng-disabled="!haveAllIng" ng-attr-class="{{ haveAllIng ? 'btn-default btn ' : 'btn-warning btn ' }}" ng-click="drinkIt()"> Drink It! </button>
 </div>
 <p> {{status}} </p>
@@ -83,9 +83,9 @@
     <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 3.25, 'fa fa-star fa-2x':rate>3.75, 'fa fa-star-half-o fa-2x':rate>3.25 && rate<=3.75}"  ng-mouseover="mouse(4)" ng-click="rateClick(4)" ng-disabled="hasRated"></i>
     <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 4.25, 'fa fa-star fa-2x':rate>4.75, 'fa fa-star-half-o fa-2x':rate>4.25 && rate<=4.75}"  ng-mouseover="mouse(5)" ng-click="rateClick(5)" ng-disabled="hasRated"></i>
 </div>
-<br>
-<div class="col-sm-12 col-md-12 col-lg-12">
-  <a analytics-category="Social Media" analytics-event="Footer" analytics-label="Twitter" analytics-on="" class="icon-twitter" href="https://twitter.com/sonicdrivein" target="_blank">
+</br>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 social">
+  <a  analytics-category="Social Media" analytics-event="Footer" analytics-label="Twitter" analytics-on="" class="icon-twitter" href="https://twitter.com/sonicdrivein" target="_blank">
                 </a>
 <!-- Still showing up as hyper link...
 
@@ -93,6 +93,7 @@
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 -->
     <div class="fb-like" data-href="" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</br>
 </div>
 
 </div>
