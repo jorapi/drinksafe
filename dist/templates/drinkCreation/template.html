@@ -1,5 +1,5 @@
 
-<div class="container-fluid drinkCreation" ng-hide="drinkPost || hideUserMenu">
+<div class="container-fluid drinkCreation" ng-hide="drinkPost || hideUserMenu" >
   <form drinkCreation name="drinkForm" ng-submit="submit()">
     <div class="row">
       <div class="col-sm-12 col-md-4 col-lg-4 ">
@@ -62,8 +62,8 @@
         <br>
         <input class="form-control panel-heading " ng-click="dirty=true" ng-model="search" placeholder="Search For Ingredients" type="search"><br>
         <ul class="panel-body list-group ingDirections" ng-hide="adding">
-          <li class="list-group-item" ng-repeat="ingre in dataIngredients | filter:search | orderBy:text | limitTo:6" style="list-style-type: none;">
-            <div class=" col-xs-4 col-sm-4 col-md-4 col-lg-5">
+          <li class="list-group-item" ng-repeat="ingre in dataIngredients | filter:search | orderBy:text | limitTo:6" style="list-style-type: none; overflow:hidden">
+            <div class=" col-xs-4 col-sm-4 col-md-4 col-lg-5" style="overflow:hidden">
               {{ingre.text}}
             </div>
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
