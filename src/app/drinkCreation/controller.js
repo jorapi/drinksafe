@@ -1,5 +1,5 @@
 angular.module('RDash')
-  .controller('drinkCreationController', function($scope, $http, $location) {
+  .controller('drinkCreationController', function($scope, $http, $location, $window) {
     //check if user is logged in
     $scope.hideUserMenu = true;
     $scope.currentUserId = -1;
@@ -37,6 +37,20 @@ angular.module('RDash')
       .success(function(response) {
         $scope.dataIngredients = response;
       });
+
+      if($window.innerWidth <= 540){
+      $scope.isMobile=true;
+    }
+
+    $scope.$watch(function(){
+     return $window.innerWidth;
+  }, function(value) {
+    if(value <= 540){
+      $scope.isMobile=true;
+    }else{
+      $scope.isMobile=false;
+    }
+ });
 
 
     $scope.submit = function() {
