@@ -41,7 +41,7 @@
               {{ing.text}}
             </div>
             <div class="ingAmount col-xs-5 col-sm-5 col-md-5 col-lg-5 btn-group row">
-              <input class="form-control btn btn-default col-xs-8" max="99" min="0" name="amount" ng-model="ing.amount" required step=".01" style="max-width:60%" inputmode="numeric" pattern="[0-9]*">
+              <input class="form-control btn btn-default col-xs-8" max="99" min="0" name="amount" ng-model="ing.amount" required step=".01" style="max-width:60%" type="number" inputmode="numeric" pattern="[0-9]*">
               <p class="btn btn-primary col-xs-4 ingList" ng-if="ing.isLiquid == true || ing.isLiquid == null">
                 oz
               </p>

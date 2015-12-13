@@ -75,7 +75,7 @@
                     {{ingre.type}}
                   </div>
                   <div class="ingAmount col-xs-4 col-sm-4 col-md-4 col-lg-4 btn-group row" ng-hide="isMobile" ng-class="{'padFix': isMobile}">
-                    <input class="form-control btn-default btn col-xs-8 input-xs" ng-class="{'input-sm': isMobile}" max="99" min="0" name="amount" ng-model="ingre.amount" required step=".01" style="max-width:60%" inputmode="numeric" pattern="[0-9]*">
+                    <input class="form-control btn-default btn col-xs-8 input-xs" ng-class="{'input-sm': isMobile}" max="99" min="0" name="amount" ng-model="ingre.amount" required step=".01" style="max-width:60%" type="number" inputmode="numeric" pattern="[0-9]*">
                     <p class="btn btn-primary col-xs-4" ng-class="{'textFix btn-md': isMobile}" ng-if="ingre.isLiquid == true || ingre.isLiquid == null">
                       oz
                     </p>

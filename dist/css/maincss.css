@@ -1,3 +1,5 @@
+.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
+
 .angucomplete-dropdown {
     overflow-y: auto;
     max-height: 200px; // your preference
@@ -15,8 +17,6 @@
 .angucomplete-holder {
   position: inherit;
 }
-
-.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
 
 
 .drinkCreation .ingList *{
@@ -301,6 +301,11 @@ overflow: auto;
 
  }
 
+.dropdown-item {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
 .badge {
     font-size: .65em;
 
@@ -316,11 +321,6 @@ overflow: auto;
 
     color: #fff;
     background: rgba(0,0,0,0.5);
-}
-
-.dropdown-item {
-  padding-left: 7px;
-  padding-right: 7px;
 }
 
 
