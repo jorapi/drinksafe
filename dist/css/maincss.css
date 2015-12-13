@@ -29,6 +29,55 @@
   padding-right:0 !important;
 }
 
+.drinkDisplay .textName{
+  max-height: 100%;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 2vw;
+  border-bottom: solid #428bca;
+  border-width: 1px;
+  cursor:pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+ .drinkDisplay .textDes{
+   max-height: 100%;
+   overflow: hidden;
+   font-size: 1.5vw;
+   word-wrap: break-word;
+   -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+   -o-transition: all 1s ease;
+   -ms-transition: all 1s ease;
+   transition: all 1s ease;
+ }
+
+.drinkDisplay .bottom{
+  margin-left:1vw;
+}
+
+.drinkDisplay .padFix{
+  padding-right:1vw !important;
+  padding-left:1vw !important;
+}
+
+.drinkDisplay .inWords{
+  text-align:left;
+}
+
+.drinkDisplay .fa-star-half-o{
+  color:rgb(214, 161, 2);
+}
+.drinkDisplay .fa-star{
+  color:rgb(214, 161, 2);
+}
+.drinkDisplay .entered .fa-star{
+  color:red;
+}
+
 .drinkSearch{
   padding:10px;
   display:block;
@@ -187,53 +236,21 @@ overflow: auto;
   margin:auto;
 }
 
-.drinkDisplay .textName{
-  max-height: 100%;
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 2vw;
-  border-bottom: solid #428bca;
-  border-width: 1px;
-  cursor:pointer;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-}
- .drinkDisplay .textDes{
-   max-height: 100%;
-   overflow: hidden;
-   font-size: 1.5vw;
-   word-wrap: break-word;
-   -webkit-transition: all 1s ease;
-   -moz-transition: all 1s ease;
-   -o-transition: all 1s ease;
-   -ms-transition: all 1s ease;
-   transition: all 1s ease;
- }
+.badge {
+    font-size: .65em;
 
-.drinkDisplay .bottom{
-  margin-left:1vw;
-}
+    display: block;
+    position: absolute;
+    top: 2em;
+    left: 2.5em;
+    width: 1.75em;
+    height: 1.75em;
+    line-height: 1.55em;
+    border-radius: 50%;
+    text-align: left;
 
-.drinkDisplay .padFix{
-  padding-right:1vw !important;
-  padding-left:1vw !important;
-}
-
-.drinkDisplay .inWords{
-  text-align:left;
-}
-
-.drinkDisplay .fa-star-half-o{
-  color:rgb(214, 161, 2);
-}
-.drinkDisplay .fa-star{
-  color:rgb(214, 161, 2);
-}
-.drinkDisplay .entered .fa-star{
-  color:red;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
 }
 
 .navMobile{
@@ -286,23 +303,6 @@ overflow: auto;
    position:relative;
 
  }
-
-.badge {
-    font-size: .65em;
-
-    display: block;
-    position: absolute;
-    top: 2em;
-    left: 2.5em;
-    width: 1.75em;
-    height: 1.75em;
-    line-height: 1.55em;
-    border-radius: 50%;
-    text-align: left;
-
-    color: #fff;
-    background: rgba(0,0,0,0.5);
-}
 
 .dropdown-item {
   padding-left: 7px;

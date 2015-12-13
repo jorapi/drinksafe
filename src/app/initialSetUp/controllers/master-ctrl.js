@@ -23,14 +23,14 @@ function MasterCtrl($scope, $cookieStore, $http, $window) {
         }
       });
 
-      if($window.innerWidth < 460){
+      if($window.innerWidth <= 540){
         $scope.isMobile=true;
       }
 
       $scope.$watch(function(){
        return $window.innerWidth;
     }, function(value) {
-      if(value < 460){
+      if(value <= 540){
         $scope.isMobile=true;
       }else{
         $scope.isMobile=false;
