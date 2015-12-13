@@ -55,8 +55,8 @@
 
 </div>
 
-<div class="drinkMe" ng-hide="hideHeart">
-  <button class="" ng-disabled="!haveAllIng" ng-attr-class="{{ haveAllIng ? 'btn-default btn btn-lg' : 'btn-warning btn btn-lg' }}" ng-click="drinkIt()"> Drink It! </button>
+<div class="drinkMe" >
+  <button style="font-size:2vw;" ng-disabled="!haveAllIng" ng-attr-class="{{ haveAllIng ? 'btn-default btn ' : 'btn-warning btn ' }}" ng-click="drinkIt()"> Drink It! </button>
 </div>
 <p> {{status}} </p>
 
@@ -83,6 +83,7 @@
     <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 3.25, 'fa fa-star fa-2x':rate>3.75, 'fa fa-star-half-o fa-2x':rate>3.25 && rate<=3.75}"  ng-mouseover="mouse(4)" ng-click="rateClick(4)" ng-disabled="hasRated"></i>
     <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 4.25, 'fa fa-star fa-2x':rate>4.75, 'fa fa-star-half-o fa-2x':rate>4.25 && rate<=4.75}"  ng-mouseover="mouse(5)" ng-click="rateClick(5)" ng-disabled="hasRated"></i>
 </div>
+</br></br>
 <div class="col-sm-12 col-md-12 col-lg-12">
   <a analytics-category="Social Media" analytics-event="Footer" analytics-label="Twitter" analytics-on="" class="icon-twitter" href="https://twitter.com/sonicdrivein" target="_blank">
                 </a>

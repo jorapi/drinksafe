@@ -1,4 +1,5 @@
-<div class="container-fluid" ng-hide="drinkPost || hideUserMenu">
+<div class="container-fluid drinkCreation" >
+<!-- <div class="container-fluid drinkCreation" ng-hide="drinkPost || hideUserMenu"> -->
   <form drinkCreation name="drinkForm" ng-submit="submit()">
     <div class="row">
       <div class="col-sm-12 col-md-4 col-lg-4 ">
@@ -25,30 +26,30 @@
       </div>
     </div>
     <div class="row">
-      <div class=" col-sm-6 col-md-6 col-lg-6  panel panel-primary">
+      <div class="  col-sm-6 col-md-6 col-lg-6  panel panel-primary">
         <br>
         <div class="panel-heading col-sm-12 col-md-12 col-lg-12">
           <label class="col-sm-5 col-md-5 col-lg-5" for="dcIngredients">Ingredients:</label>
           <label class="col-sm-4 col-md-4 col-lg-4 " for="dcIngredients">Amount:</label>
         </div><br><br>
-        <div class="col-sm-12 col-md-12 col-lg-12 panel-body" ng-hide="ingredients.length>0">
-          <h3 style="text-align:center">Search for ingredients on the right to add them to your drinks recipe.</h3>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 panel-body" ng-hide="ingredients.length>0">
+          <h3 style="text-align:center">Search for to add them to your drinks recipe.</h3>
         </div>
         <ul class="panel-body list-group" id="dcIngredients">
           <li class="list-group-item" ng-repeat="ing in ingredients | orderBy:text" style="list-style-type: none;">
-            <div class="ingName col-sm-4 col-md-4 col-lg-4">
+            <div class="sizeFix ingName col-xs-4 col-sm-4 col-md-4 col-lg-4">
               {{ing.text}}
             </div>
-            <div class="ingAmount col-sm-5 col-md-5 col-lg-5 btn-group">
-              <input class="form-control btn btn-default" max="99" min="0" name="amount" ng-model="ing.amount" required step=".01" style="max-width:60%" type="number">
-              <p class="btn btn-primary" ng-if="ing.isLiquid == true || ing.isLiquid == null">
+            <div class="ingAmount col-xs-5 col-sm-5 col-md-5 col-lg-5 btn-group row">
+              <input class="form-control btn btn-default col-xs-8" max="99" min="0" name="amount" ng-model="ing.amount" required step=".01" style="max-width:60%" type="number">
+              <p class="btn btn-primary col-xs-4" ng-if="ing.isLiquid == true || ing.isLiquid == null">
                 oz
               </p>
-              <p class="btn btn-primary" ng-if="ing.isLiquid == false">
+              <p class="btn btn-primary col-xs-4" ng-if="ing.isLiquid == false">
                 units
               </p>
             </div>
-            <div class="ingRemove col-sm-2 col-md-2 col-lg-2">
+            <div class="ingRemove col-xs-2 col-sm-2 col-md-2 col-lg-2">
               <a class="btn btn-danger btn-sm" ng-click="remove(ing)">
                 <span class="glyphicon glyphicon-remove"></span>
                 Remove
