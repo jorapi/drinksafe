@@ -3,10 +3,10 @@
  */
 
 angular.module('RDash')
-    .controller('MasterCtrl', ['$scope', '$cookieStore', '$http', MasterCtrl]);
+    .controller('MasterCtrl', ['$scope', '$cookieStore', '$http', '$window', MasterCtrl]);
 
 
-function MasterCtrl($scope, $cookieStore, $http) {
+function MasterCtrl($scope, $cookieStore, $http, $window) {
     /**
      * Sidebar Toggle & Cookie Control
      */
@@ -22,6 +22,20 @@ function MasterCtrl($scope, $cookieStore, $http) {
           $scope.currentUser = response;
         }
       });
+
+      if($window.innerWidth < 460){
+        $scope.isMobile=true;
+      }
+
+      $scope.$watch(function(){
+       return $window.innerWidth;
+    }, function(value) {
+      if(value < 460){
+        $scope.isMobile=true;
+      }else{
+        $scope.isMobile=false;
+      }
+   });
 
     $scope.getWidth = function() {
         return window.innerWidth;

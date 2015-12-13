@@ -45,11 +45,42 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
   <!-- End Facebook comments -->
-  <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+  <div id="page-wrapper"  ng-class="{'open': toggle, 'navMobile': isMobile}" ng-cloak>
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-      <ul class="sidebar">
+    <div id="mobileSidebar" ng-show="isMobile">
+      <a class="btn mobile-btn " ng-click="mobileToggle=!mobileToggle">
+        <span class="fa" ng-class="{'fa-bars': !mobileToggle, 'fa-times':mobileToggle}"></span>
+      </a>
+        <ul class="sidebar" ng-show="mobileToggle">
+          <li class="sidebar-list">
+            <a href="#">
+              Home <span class="menu-icon fa fa-home"></span></a>
+          </li>
+          <li class="sidebar-list">
+            <a href="#/drinkSearch">
+              Search Drinks<span class="menu-icon fa fa-search"></span></a>
+          </li>
+          <li ng-hide="hideUserMenu" class="ng-hide sidebar-list">
+            <a href="#/drinkCreation">
+              Create a Drink <span class="menu-icon fa fa-pencil"></span></a>
+          </li>
+          <!-- Start User Menu -->
+          <div ng-hide="hideUserMenu" class="ng-hide" id="userSideMenu">
+            <li class="sidebar-list">
+              <a href="#/userFavorites">
+                My Drinks <span class="menu-icon fa fa-heart"></span></a>
+            </li>
+            <li class="sidebar-list">
+              <a href="#/userCabinet">
+                My Liquor Cabinet<span class="menu-icon fa fa-beer"></span></a>
+            </li>
+            <div>
+        </ul>
+    </div>
+
+    <div id="sidebar-wrapper" ng-hide="isMobile">
+      <ul class="sidebar" >
         <li class="sidebar-main">
           <a ng-click="toggleSidebar()">
             <img src="/img/drinksafe.svg" style="display: inline-block;width: 150px;"/>

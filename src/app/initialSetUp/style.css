@@ -1,0 +1,44 @@
+.navMobile{
+  padding-left:0px !important;
+}
+
+#mobileSidebar{
+  position:fixed;
+  z-index:998;
+  display:block;
+  height:100%;
+}
+ .mobile-btn{
+   background-color: #30426a;
+   z-index:999;
+   color:white;
+   height:40px;
+   width:40px;
+   display:block;
+ }
+
+ .mobile-btn span{
+   color:#b2bfdc;
+   font-size:18px;
+   margin:auto;
+   text-align:center;
+   top:3px;
+   position:relative;
+ }
+
+ #mobileSidebar .sidebar{
+   position:relative;
+   top:2px;
+   background-color: #30426a;
+   opacity: 0.9;
+   border-width:1px;
+   border-color:black;
+   border-style: solid;
+   border-radius: 5px;
+ }
+
+ #mobileSidebar .sidebar .sidebar-list a{
+   border-width:1px;
+   border-color:black;
+   border-style: solid;
+ }
