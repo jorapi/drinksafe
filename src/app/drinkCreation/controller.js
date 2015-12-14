@@ -36,7 +36,7 @@ angular.module('RDash')
     $http.get("/api/ingredients")
       .success(function(response) {
         $scope.dataIngredients = response;
-      }).then(setup());
+      });
 
       if($window.innerWidth <= 540){
       $scope.isMobile=true;
@@ -125,7 +125,6 @@ angular.module('RDash')
     };
 
     // Do this stuff for editing
-    function setup(){
     if($location.search().id != null){
       $http.get("/api/drinks/" + $location.search().id)
         .success(function(response) {
@@ -168,7 +167,6 @@ angular.module('RDash')
           }
         });
     }
-  };
 
     $scope.addIngredient = function() {
       var hold = {
